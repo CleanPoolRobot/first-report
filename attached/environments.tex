@@ -1,0 +1,55 @@
+\newenvironment{report-title}
+{
+  \begin{center}
+  \begin{Large}
+  \bfseries
+}
+{
+  \normalfont
+  \end{Large}
+  \end{center}
+}
+
+\newenvironment{author-list}
+{
+  \begin{center}
+  \bfseries
+}
+{
+  \normalfont
+  \end{center}
+}
+
+\newenvironment{e-mails}
+{
+  \begin{center}
+  \ttfamily
+}
+{
+  \rmfamily
+  \end{center}
+}
+
+\newenvironment{author-address}
+{
+  \begin{center}
+}
+{
+  \end{center}
+}
+
+\newenvironment{abstractenv}
+{
+  \begin{list}{}{
+    \setlength{\topsep}{0pt}
+    \setlength{\leftmargin}{0.8cm}
+    \setlength{\rightmargin}{0.8cm}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemindent}{\parindent}
+    \setlength{\parsep}{\parskip}
+  }
+  \item[]
+}
+{
+  \end{list}
+}
