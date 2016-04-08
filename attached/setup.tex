@@ -10,6 +10,9 @@
 \makeatletter
 \hypersetup{
      	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
 	    pdfcreator={LaTeX with abnTeX2},
 		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
 		colorlinks=true,       		% false: boxed links; true: colored links
@@ -21,8 +24,7 @@
 }
 \makeatother
 \setlength{\parindent}{1.3cm}
-\setlength{\parskip}{0.2cm}  
-\makeindex
+\setlength{\parskip}{0.2cm}
 
 % Definição de listagem utilizando listras por linha
 \newcommand\realnumberstyle[1]{#1}
