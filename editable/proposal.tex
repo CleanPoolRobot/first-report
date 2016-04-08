@@ -213,7 +213,7 @@ características:
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/waterbomb.png}
-  \caption{ Bomba proposta}
+  \caption{Bomba proposta}
   \label{fig:waterbomb}
 \end{figure}
 \FloatBarrier
@@ -373,7 +373,7 @@ engrenagem transmitirá para o eixo, fazendo com que as escovas rotacionem.
 \FloatBarrier
 
 \item[Entrada Inferior d'água:] As entradas ficará localizada logo após as
-escovas, como pode ser observado na figura \ref{fig:wheels}.
+escovas, como pode ser observado na figura \ref{fig:better-croqui}.
 
 \item[Fonte de Alimentação Externa:] O \textit{Clean Pool Robot} é alimentado por
 uma fonte de energia que fica fora da água, através de um cabo de força. O Robô
@@ -425,4 +425,132 @@ subaquática: Manutenção Nava, Off-shore, Industrial, Construção Civil. Para
 revestimento e reparo em aço, concreto e outros materiais. Estruturas parcial
 ou totalmente submersas, oleodutos, hidroelétricas, plataforma de petróleo,
 estacas de concreto, tanques, reservatórios e caixas d'água.
+\end{description}
+
+\section{A Mente Do Robô (Eletrônica e Software)}
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/schema-interactive-eletro-soft.jpg}
+  \caption{Esquemático da Interação entgre Eletrônica e Software}
+  \label{fig:schema-interactive-electro-soft}
+\end{figure}
+\FloatBarrier
+\par
+A figura demonstra a interação dos componentes eletrônicos e o \textit{software}.
+\par
+Os periféricos fornecerão dados que, por sua vez, serão passados ao \textit{driver} por
+meio de dispositivo de \textit{hardware} (GPIO).  O \textit{driver} será responsável por permitir
+a comunicação entre o \textit{hardware} e o \textit{software} que, na figura, é representado pelos
+serviços que deve fornecer ao sistema. Cada serviço tratará os dados de entrada
+conforme a especificidade solicitada e, em seguida, retorna uma saída para um
+atuador, por meio do \textit{driver}.
+\par
+\begin{description}
+\item[\textit{Raspberry PI 2 B}:] Com o objetivo de desenvolver um robô é
+necessário ter uma central de processamento de dados, a \textit{Raspberry pi} foi
+escolhida pelo seu numero de portas GPIO aonde pode ser desenvolvido a solução
+de sensores que existe para o problema, e também há a possibilidade de, caso
+venham a aparecer a necessidade de mais sensores. A \textit{Raspberry pi} tem suporte a
+sistema operacional, o que permite o uso de uma extensão maior de bibliotecas
+como a biblioteca \textit{pthread}, também há a possibilidade do uso de varias linguagens
+de programação.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/rpi2b.jpg}
+  \caption{\textit{Raspberry Pi 2 B}}
+  \label{fig:raspberry2b}
+\end{figure}
+\FloatBarrier
+
+\item[GPIO:] \textit{Generic Ports Input Output} são saídas e entradas de tensão.
+Elas servem para fazer a comunicação do processador com componentes externos,
+sensores e atuadores e outros tipos de componentes eletrônicos. Algumas dessas
+portas tem usos predefinidos pelo fabricante do \textit{hardware} como saídas de
+alimentação genérica, e terras, outras dos pinos são de uso genérico. A
+\textit{Raspberry pi} tem 40 GPIO, aonde dessas 17 são para uso genérico.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/gpio.png}
+  \caption{GPIO \textit{Raspberry Pi 2 B}}
+  \label{fig:raspberry2b}
+\end{figure}
+\FloatBarrier
+
+\item[Sensores de Distância:] serão utilizados sensores de distância com o
+intuito de permitir ao robô a identificação do espaço entre o robô e qualquer
+objeto à sua frente. Isso é importante para evitar colisões com as paredes da
+piscina e obstáculos a alturas que o sensor possa detectar. O sensor específico
+ainda não foi definido pois é necessário fazer teste com os propostos.
+
+\item[Sensores de Pressão:] O sensor de pressão proposta funciona com o
+princípios de materiais piezoelétricos, um liquido entra dentro da câmara
+e proporciona uma pressão nas paredes da câmara, esse pressão gera uma
+diferença de potencial no material. Com essa diferença de potencial é
+possível, usando um conversor AD (Analógico/Digital), saber a pressão dentro
+da câmara, e fora do robô.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/pressure-sensor.png}
+  \caption{Sensor de pressão MPX4250GP}
+  \label{fig:pressure-sensor}
+\end{figure}
+\FloatBarrier
+
+\item[Acelerômetro/Giroscópio:] Está sendo cogitado usar um acelerômetro
+para auxiliar o deslocamento em linha reta do robô e detectar choques com
+obstáculos grandes, quando ocorre um choque com um obstaculo grande não
+detectado pelo sensor de distancia a uma variação brusca na aceleração, com
+isso podemos tratar o obstaculo ou abortar o funcionamento do robô.
+\par
+No mesmo módulo se encontra um giroscópio, ele mede rotações no robô, caso
+seja identificado alguma rotação não pretendida pelo sistema podemos usar esse
+dado para corrigir a trajetória do mesmo. O componente eletrônico que tem os
+dois sensores se comunica através do protocolo I2C. Isso reduz o numero de
+pinos necessários pare ler os dados do sensor.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/accelerometer.png}
+  \caption{Acelerômetro/Giroscópio MPU-6050}
+  \label{fig:accelerometer}
+\end{figure}
+\FloatBarrier
+
+\item[Servo Motor:] Servos motores são utilizados para rotacionar um eixo até
+uma posição desejada. Esses motores são normalmente motores de alto torque.
+Dois servos (Micro Servo 9g SG90 TowerPro) serão utilizados para rotacionar
+as rodas (5), o principal motivo de escolher esse modelo é ele ter torque
+suficiente para mover as mesmas e ter baixo custo, E para mover a saída de água
+(4) da bomba foi escolhido um servo motor (SM-S4306R) com maior liberdade de
+rotação (360º) e uma maior torque.
+\begin{figure}[h]
+  \centering
+	\includegraphics[height=5cm]{figures/servant-motor.png}
+	\quad
+	\includegraphics[height=5cm]{figures/micro-motor.png}
+  \caption{Servo Motores.}
+\end{figure}
+\FloatBarrier
+
+\item[Relé do Motor:] Os relés servem para fazer acionamento de circuitos
+de alta tensão usando como chaves circuitos de baixa tensão, além disso os
+ relés servem para isolar os circuitos de baixa tensão dos de alta tensão.
+ 
+\item[\textit{Driver} GPIO:] O driver é um software que habilita a comunicação
+entre o hardware e o software. A partir do driver é possível consumir os
+dados advindos dos componentes de hardware, fazer o devido tratamento e, se
+necessário, enviar uma resposta ao hardware (WINDOWS). Para o projeto foram
+identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza
+o Raspberry. Essas bibliotecas fazem a interface entre o hardware e o middleware,
+de forma que essas APIs fazem o papel do driver.
+
+\item[\textit{Middleware} (Serviço):] é um software que conecta outros componentes
+de software. Uma camada de infraestrutura que viabiliza o desenvolvimento de
+aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados
+pela aplicação de negócio (ORACLE). O middleware fornecerá serviços base para
+o robô, como ativação dos motores, escova e uso dos sensores.
 \end{description}
