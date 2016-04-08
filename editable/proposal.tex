@@ -182,11 +182,10 @@ estrutura conta agora com cantos e arestas arredondadas conforme a Figura.
 \item[Bomba:] O processo de aspiração da piscina feito pelo robô será uma das
 principais tarefas executadas pela bomba de sucção, bem como também o processo
 de movimentação do robô embaixo d’água. Para isso, é importante que a bomba
-seja resumidamente forte o suficiente para sugar e gerar movimentação por meio
+seja forte o suficiente para sugar e gerar movimentação por meio
 do fluxo de saída da bomba. A sucção será conectada diretamente ao reservatório
-onde acontecerá a filtragem da água. Com isso, é esperado que a vazão diminua
-entorno de 30 a 40\% da sua vazão nominal de saída. É importante ressaltar que
-as únicas funções da bomba neste projeto são apenas filtrar e movimentar por empuxo.
+onde acontecerá a filtragem da água. É importante ressaltar que as únicas funções
+da bomba neste projeto são apenas filtrar e movimentar por empuxo.
 \par
 A análise do dimensionamento adequado para a bomba será feito a partir de sua vazão
 nominal. Para isto, tem-se por especificações primárias bombas que ofereçam vazões
@@ -209,6 +208,8 @@ características:
   \item Formato: Cilíndrico alterável;
   \item Área de operação entorno de até 3,7 metros.
   \end{itemize}
+Observação: O formato da bomba poderá ser alterado de acordo com a eficiência
+esperada.
 \par
 \begin{figure}[h]
   \centering
@@ -222,8 +223,8 @@ características:
 e a propulsão do robô abaixo d’água, foi pensado em um teste para analisar se
 há coerência nos cálculos realizados. Sendo assim, o teste irá ser realizado
 com um uma estrutura móvel e uma bomba de aquário. É esperado, com isso, validar
-os cálculos realizados no que tange a movimentação da estrutura. Para isso,
-foram explicados por meio dos métodos de cálculos descritos a seguir. Segundo
+os cálculos realizados no que tange a movimentação da estrutura. Para isso, é
+necessário utilizar métodos que descrevem os cálculos que regem o movimento. Segundo
 ISE(2000), quando um veículo submersível se movimenta com velocidade constante,
 a propulsão gerada pelos propulsores se iguala à força de arrasto produzida. A
 força de arrasto será obtida a partir da soma da força de arrasto devido a 
@@ -231,9 +232,9 @@ movimentação do veículo mais a força de arrasto devido o cabo de alimentaç�
 \begin{displaymath}
   Fp = Fa = Fv + Fc = \frac{1}{2}\rho V^{2}_{v}Cd_{v} + \frac{1}{2}\rho V^{2}_{c}Cd_{c}
 \end{displaymath}
-Onde $Fp$ e $Fa$ referem-se à força de propulsora e força de arrasto total
-respectivamente, $Fv$ e $Fc$ são as forças de arrasto devido ao veiculo e ao cabo de
-alimentação, $\rho$ é a densidade do fluido, $V_{v}$ e $V_{c}$ velocidades do
+Onde $Fp$ e $Fa$ referem-se à força de propulsiva e força de arrasto total
+respectivamente; $Fv$ e $Fc$ são as forças de arrasto devido ao veiculo e ao cabo de
+alimentação; $\rho$ é a densidade do fluido, $V_{v}$ e $V_{c}$ velocidades do
 veículo e do cabo e por fim, $Cd_{v}$ e $Cd_{c}$ representam os coeficientes
 de arrasto.
 \par
@@ -260,7 +261,7 @@ cinemática do fluido.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/graphic-reynolds.png}
-  \caption{Coeficiente de arrasto em função do numero de Reynolds}
+  \caption{Coeficiente de arrasto em função do número de Reynolds}
   \label{fig:graphic-reynolds}
 \end{figure}
 \FloatBarrier
@@ -286,7 +287,9 @@ e detritos da água.
   principal será um elemento filtrante na forma cilíndrica comumente utilizado
   na filtragem de caixas d’águas. As imagens dos filtros a serem utilizados e as
   especificações técnicas do elemento filtrante principal constam a seguir.
-  \item Malha de Alumínio: A malha de alumínio é uma grade localizada na entrada
+  \item Malha de Alumínio: A malha de alumínio é um material durável, altamente
+  resistente água, não precisa de manutenção e nem de troca. Em caso de avaria na
+  grade a substituição é simples e barata. A grade será localizada na entrada
   da caixa filtradora, no duto de acesso na base do robô, conforme imagem abaixo.
   \par
   \begin{figure}[h]
@@ -297,6 +300,14 @@ e detritos da água.
   \end{figure}
   \FloatBarrier
 \end{itemize}
+\par
+O elemento filtrante na forma cilindrica, alem de ser o mais encontrado
+comercialmente, proporcionará ao CPR uma compactação dos dutos de filtragem e
+uma melhor organização interna para alocação de seus componentes. O modelo de
+filtro selecionado da Poly Flow e similares é o que mais se encaixa as
+necessidades de projeto e ao volume de trabalho da bomba a ser utilizada.
+Esses modelos são comumente utilizados na filtragem de caixas d’águas, piscinas
+e banheiras.
 
 \item[Motor:] Serão utilizados dois motores elétricos para rotacionar as escovas.
 a transmissão do torque para as escovas será por engrenagens, como ilustrado na
@@ -318,7 +329,10 @@ aberturas imediatamente opostas que servem para direcionar o jato d’água,
 funcionando como o sistema de propulsão do produto. Quando uma das quatro aberturas
 estiverem sendo utilizadas para direcionar o jato, as outras três permanecem
 fechadas sendo utilizadas somente quando for necessário para a movimentação para a
-direção desejada.
+direção desejada. O duto de saída será um bocal direcionável localizado na
+parte superior do robô responsável por sua locomoção. Esse bocal irá se mover
+nas 4 direções principais, isto é, nos ângulos de 0, 90, 180 e 270 graus,
+proporcionando ao robô a locomoção necessária para o cumprimento da rota de limpeza.
 
 \item[Rodas:] O aparelho contará com dois tipos de rodas, a primeira em formato
 de esfera que será apenas para apoio. Foram utilizadas quatro rodas desse modelo.
