@@ -100,7 +100,7 @@ componentes eletrônicos envolvidos.
   \centering
   \includegraphics[width=0.9\textwidth]{figures/flow-regular-robot.jpg}
   \caption{Modo de Operação Regular do \textit{Clean Pool Robot}}
-  \label{fig:schema-way-robot}
+  \label{fig:flow-regular-robot}
 \end{figure}
 \FloatBarrier
 
@@ -128,7 +128,7 @@ de controle devem seguir para circundar o obstáculo neste caso
   \centering
   \includegraphics[width=0.9\textwidth]{figures/flow-robot-obstacle.jpg}
   \caption{Modo de Operação Resposta a Obstáculos do \textit{Clean Pool Robot}}
-  \label{fig:schema-way-robot}
+  \label{fig:flow-obstacle-robot}
 \end{figure}
 \FloatBarrier
 
@@ -142,7 +142,7 @@ da piscina.
   \centering
   \includegraphics[width=0.9\textwidth]{figures/flow-initial-robot.jpg}
   \caption{Modo de Operação Inicial e Final do \textit{Clean Pool Robot}}
-  \label{fig:schema-way-robot}
+  \label{fig:flow-initial-robot}
 \end{figure}
 \FloatBarrier
 
@@ -160,7 +160,114 @@ de cada componente utilizado no Robô.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/croqui.png}
-  \caption{ Croqui inicial do \textit{Clean Pool Robot}: robô limpador de piscina}
-  \label{fig:schema-way-robot}
+  \caption{ Croqui inicial do \textit{Clean Pool Robot}}
+  \label{fig:initial_croqui}
 \end{figure}
 \FloatBarrier
+\par
+Por motivo de resistência ao movimento o formato do robô foi modificado para
+melhor aproveitamento das forças aerodinâmica envolvidas, as alterações no
+desenho inicial foram feitas com a intenção de diminuir a força de arrasto, a
+estrutura conta agora com cantos e arestas arredondadas conforme a Figura.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/better-croqui.png}
+  \caption{ Croqui melhorado do \textit{Clean Pool Robot}}
+  \label{fig:better-croqui}
+\end{figure}
+\FloatBarrier
+\par
+\begin{description}
+\item[Bomba:] O processo de aspiração da piscina feito pelo robô será uma das
+principais tarefas executadas pela bomba de sucção, bem como também o processo
+de movimentação do robô embaixo d’água. Para isso, é importante que a bomba
+seja resumidamente forte o suficiente para sugar e gerar movimentação por meio
+do fluxo de saída da bomba. A sucção será conectada diretamente ao reservatório
+onde acontecerá a filtragem da água. Com isso, é esperado que a vazão diminua
+entorno de 30 a 40\% da sua vazão nominal de saída. É importante ressaltar que
+as únicas funções da bomba neste projeto são apenas filtrar e movimentar por empuxo.
+\par
+A análise do dimensionamento adequado para a bomba será feito a partir de sua vazão
+nominal. Para isto, tem-se por especificações primárias bombas que ofereçam vazões
+altas e que trabalhem em uma profundidade máxima de 3 metros. 
+\par
+Após o cálculo de sua velocidade de saída utilizando a sua vazão e área de jato,
+serão calculados o empuxo desenvolvido e sua respectiva pressão de saída. É importante
+salientar que a pressão de saída deverá ser sempre positiva e superior a pressão
+hidrostática a qual está submetido o bocal de propulsão.
+\par
+Ao longo de alguns estudos, observou-se que para o problema dado os modelos de bombas
+que melhor se enquadram são as moto bombas, uma vez que as mesmas possuem baixo peso e
+altas velocidades de saída, bem como altas vazões.
+\par
+O modelo parcialmente proposto será uma bomba do tipo Bilge , na qual tem as seguintes
+características:
+  \begin{itemize}
+  \item Peso: aproximadamente 3 kg;
+  \item Modelo: 500 GPH - com Tensão de trabalho 12 V DC - Amperagem de 1.9;
+  \item Formato: Cilíndrico alterável;
+  \item Área de operação entorno de até 3,7 metros.
+  \end{itemize}
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/waterbomb.png}
+  \caption{ Bomba proposta}
+  \label{fig:waterbomb}
+\end{figure}
+\FloatBarrier
+\par
+\textit{Dimensionamento do Teste:} Diante de todo processo de dimensionamento
+e a propulsão do robô abaixo d’água, foi pensado em um teste para analisar se
+há coerência nos cálculos realizados. Sendo assim, o teste irá ser realizado
+com um uma estrutura móvel e uma bomba de aquário. É esperado, com isso, validar
+os cálculos realizados no que tange a movimentação da estrutura. Para isso,
+foram explicados por meio dos métodos de cálculos descritos a seguir. Segundo
+ISE(2000), quando um veículo submersível se movimenta com velocidade constante,
+a propulsão gerada pelos propulsores se iguala à força de arrasto produzida. A
+força de arrasto será obtida a partir da soma da força de arrasto devido a 
+movimentação do veículo mais a força de arrasto devido o cabo de alimentação.
+\begin{displaymath}
+  Fp = Fa = Fv + Fc = \frac{1}{2}\rho V^{2}_{v}Cd_{v} + \frac{1}{2}\rho V^{2}_{c}Cd_{c}
+\end{displaymath}
+Onde $Fp$ e $Fa$ referem-se à força de propulsora e força de arrasto total
+respectivamente, $Fv$ e $Fc$ são as forças de arrasto devido ao veiculo e ao cabo de
+alimentação, $\rho$ é a densidade do fluido, $V_{v}$ e $V_{c}$ velocidades do
+veículo e do cabo e por fim, $Cd_{v}$ e $Cd_{c}$ representam os coeficientes
+de arrasto.
+\par
+A potência necessária para a bomba pode ser obtida em função da força propulsiva
+e da velocidade do veiculo.
+\begin{displaymath}
+  P = Fp\frac{d}{t}
+\end{displaymath}
+Onde $d$ é a distancia percorrida, $t$ o tempo e $P$ a potência desejada.
+\par
+Os coeficientes de arrasto são medidos experimentalmente, para fluidos como
+ar podem ser encontrados tabelados em função da velocidade do veiculo em relação
+à velocidade do som nas condições do ambiente em questão (número de \textit{Mach}), uma
+vez que este pode sofrer alterações devido a temperatura envolvida, meio de
+propagação etc. Quando o veículo estudado se movimento em fluido líquido como a
+água por exemplo, o coeficiente de arrasto deve ser medido em função do número
+de Reynolds, (Eng et al., 2008) que por sua vez é calculado pela equação abaixo.
+\begin{displaymath}
+  Re = \frac{VD}{\upsilon}
+\end{displaymath}
+Onde $V$ equivale a velocidade do veículo, $D$ o diâmetro e $\upsilon$ a viscosidade
+cinemática do fluido.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/graphic-reynolds.png}
+  \caption{Coeficiente de arrasto em função do numero de Reynolds}
+  \label{fig:graphic-reynolds}
+\end{figure}
+\FloatBarrier
+\par
+Inicialmente a bomba utilizada será uma bomba de aquário, o que servirá de
+parâmetro para a determinação da bomba correta. Para isso, serão realizados
+testes com essa bomba para comprovação dos cálculos descritos acima.
+
+\item[Sistema Filtrador:]
+\end{description}
