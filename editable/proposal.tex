@@ -541,16 +541,42 @@ de alta tensão usando como chaves circuitos de baixa tensão, além disso os
  relés servem para isolar os circuitos de baixa tensão dos de alta tensão.
  
 \item[\textit{Driver} GPIO:] O driver é um software que habilita a comunicação
-entre o hardware e o software. A partir do driver é possível consumir os
-dados advindos dos componentes de hardware, fazer o devido tratamento e, se
-necessário, enviar uma resposta ao hardware (WINDOWS). Para o projeto foram
+entre o \textit{hardware} e o \textit{software}. A partir do driver é possível consumir os
+dados advindos dos componentes de \textit{hardware}, fazer o devido tratamento e, se
+necessário, enviar uma resposta ao\textit{hardware} (WINDOWS). Para o projeto foram
 identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza
-o Raspberry. Essas bibliotecas fazem a interface entre o hardware e o middleware,
-de forma que essas APIs fazem o papel do driver.
+o Raspberry. Essas bibliotecas fazem a interface entre o \textit{hardware} e o
+\textit{middleware}, de forma que essas APIs fazem o papel do driver.
 
-\item[\textit{Middleware} (Serviço):] é um software que conecta outros componentes
-de software. Uma camada de infraestrutura que viabiliza o desenvolvimento de
+\item[\textit{Middleware} (Serviço):] é um \textit{software} que conecta outros componentes
+de \textit{software}. Uma camada de infraestrutura que viabiliza o desenvolvimento de
 aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados
 pela aplicação de negócio (ORACLE). O middleware fornecerá serviços base para
 o robô, como ativação dos motores, escova e uso dos sensores.
 \end{description}
+
+\subsection{Arquitetura de \textit{Software}}
+A figura abaixo mostra a abstração da arquitetura do sistema associado ao projeto.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/schema-arch.jpg}
+  \caption{Arquitetura em Camadas do \textit{Software}.}
+  \label{fig:schema-arch}
+\end{figure}
+\FloatBarrier
+
+O sistema segue uma arquitetura em camadas. A partir do hardware os dados serão
+capturados. O \textit{driver} fará a ponte de comunicação entre o \textit{hardware}
+e o \textit{middleware}, permitindo que os dados possam ser trabalhados pela aplicação de
+negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \textit{middleware},
+afim de tratar os dados recebidos e fornecer instruções ao robô. Uma visão
+ampliada da arquitetura está disponível na figura abaixo.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/schema-layer-arch.jpg}
+  \caption{Detalhamento das Camadas e Interação dos componentes}
+  \label{fig:schema-layer-arch}
+\end{figure}
+\FloatBarrier
