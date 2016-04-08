@@ -269,5 +269,160 @@ Inicialmente a bomba utilizada será uma bomba de aquário, o que servirá de
 parâmetro para a determinação da bomba correta. Para isso, serão realizados
 testes com essa bomba para comprovação dos cálculos descritos acima.
 
-\item[Sistema Filtrador:]
+\item[Sistema Filtrador:] O sistema de filtragem irá garantir que a piscina
+estará limpa após o uso do \textit{Clean Pool Robot}. O filtro será fundamental,
+pois ele será responsável pela remoção das partículas de sujeira que ficam decantado
+no fundo da piscina. Primeiro a água será sugada para dentro do aparelho que passará por
+um depósito onde será feita a filtragem. Em seguida, a água filtrada retorna para
+piscina. Será realizado um sistema de dupla filtragem com dois tipos de elementos
+filtrantes, um de malha, secundário, para evitar que folhas e objetos de maior
+tamanho entrem no filtro principal que será responsável por filtrar o particulado
+e detritos da água.
+\begin{itemize}
+  \item Filtros: Usar-se-á uma malha de alumínio para a realização de uma
+  pré-filtragem, a qual impedirá que folhas, plásticos, cabelos, e outros
+  materiais maiores entupam o filtro principal responsável por retirar impurezas
+  menores da água. Essa malha é o que chamaremos de filtro secundário. O filtro
+  principal será um elemento filtrante na forma cilíndrica comumente utilizado
+  na filtragem de caixas d’águas. As imagens dos filtros a serem utilizados e as
+  especificações técnicas do elemento filtrante principal constam a seguir.
+  \item Malha de Alumínio: A malha de alumínio é uma grade localizada na entrada
+  da caixa filtradora, no duto de acesso na base do robô, conforme imagem abaixo.
+  \par
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/mesh-aluminium.png}
+    \caption{Modelo de malha de alumínio utilizada como filtro secundário.}
+    \label{fig:mesh-aluminium}
+  \end{figure}
+  \FloatBarrier
+\end{itemize}
+
+\item[Motor:] Serão utilizados dois motores elétricos para rotacionar as escovas.
+a transmissão do torque para as escovas será por engrenagens, como ilustrado na
+Figura.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/eletric-motor.png}
+  \caption{Atuação do motor elétrico.}
+  \label{fig:eletric-motor}
+\end{figure}
+\FloatBarrier
+
+\item[Saída Supeior de Água:] A água que é ejetada do sistema de filtragem é
+devolvida para a piscina já filtrada, auxiliando assim a limpeza geral de todo
+o volume em que o robô esta submerso. A água filtrada é direcionada para uma
+saída que se localiza na parte superior do produto. O duto de saída possui quatro
+aberturas imediatamente opostas que servem para direcionar o jato d’água,
+funcionando como o sistema de propulsão do produto. Quando uma das quatro aberturas
+estiverem sendo utilizadas para direcionar o jato, as outras três permanecem
+fechadas sendo utilizadas somente quando for necessário para a movimentação para a
+direção desejada.
+
+\item[Rodas:] O aparelho contará com dois tipos de rodas, a primeira em formato
+de esfera que será apenas para apoio. Foram utilizadas quatro rodas desse modelo.
+A segunda roda será para direcionar o aparelho no seu movimento, e será localizada
+no centro do robô, conforme imagem abaixo. A roda central será responsável pela
+alteração de direção do robo, sendo que apenas efetuará giros de  90º.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/wheels.png}
+  \caption{Localização das rodas e rotação das rodas centrais.}
+  \label{fig:wheels}
+\end{figure}
+\FloatBarrier
+
+\item[Escovas:] Imaginou-se utilizar escovas de formato cilíndrico, afim de que
+à medida que as rodas do robô se movem, as escovas também possam acompanhar o
+movimento sem maiores problemas. As cerdas da escova devem possuir elevada
+resistência à tração, resistência à fadiga, baixo coeficiente de atrito e boa
+resistência térmica. Dessa forma como material para as cerdas sugere-se o
+Nylon (Santos, 2010).
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/brush.png}
+  \caption{Modelo de escova sugerido para a limpeza da piscina.}
+  \label{fig:wheels}
+\end{figure}
+\FloatBarrier
+A localização das escovas está ilustrada na figura \ref{fig:wheels}, feita no software
+\textsf{CAD Catia V5 R19}. Serão utilizadas duas escovas movidas por motores elétricos,
+que farão a limpeza do chão.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/brush-local.png}
+  \caption{Localização das escovas no robô.}
+  \label{fig:brush-local}
+\end{figure}
+\FloatBarrier
+\par
+A movimentação das escovas será realizada por meio de engrenagens, como ilustrados
+na Figura abaixo. O motor elétrico fornecerá um torque e o sistema de
+engrenagem transmitirá para o eixo, fazendo com que as escovas rotacionem.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/brush-system.png}
+  \caption{Sistema para movimentação das escovas.}
+  \label{fig:brush-system}
+\end{figure}
+\FloatBarrier
+
+\item[Entrada Inferior d'água:] As entradas ficará localizada logo após as
+escovas, como pode ser observado na figura \ref{fig:wheels}.
+
+\item[Fonte de Alimentação Externa:] O \textit{Clean Pool Robot} é alimentado por
+uma fonte de energia que fica fora da água, através de um cabo de força. O Robô
+será alimentado pela tomada perto da piscina, em tensão de 220V (padrão Brasília).
+O cabo de alimentação terá um extensão que garante o deslocamento do robô por todas
+as extremidades da piscina durante a sua limpeza. Para o dimensionamento do
+comprimento do cabo foi calculado uma distância da tomada até a borda da piscina,
+somado ao maior comprimento possível para deslocamento do robô. Assim o comprimento
+do fio é dado por:
+\begin{displaymath}
+  L= d + D
+\end{displaymath}
+Onde o $L$ é o comprimento total do cabo de energia do robô, $d$ é a distância da
+tomada até a borda da piscina e $D$ é a distância a borda até o fundo da
+extremidade oposta a ela. Assim o cabo terá $L = 16,6 \approx 17m$. Considerando que
+a entrada do cabo na piscina se fará no ponto $P_ {ent}$, na metade da piscina,
+conforme a figura abaixo.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/cable-desloc.png}
+  \caption{Deslocamento do cabo dentro da piscina.}
+  \label{fig:cable-desloc}
+\end{figure}
+\FloatBarrier
+\par
+O cabo de energia possuirá uma boia presa ao logo da sua extensão para evitar
+enrolamento do cabo e possível ruptura do mesmo. O fio possuirá um revestimento
+de PVC impermeável e uma bitola estimada de 3,5 mm, para um potência consumida
+total de 350W.
+
+\item[Vedação:] É o processo que impede a passagem de líquidos, gases e
+sólidos particulados de um meio para outro. O material do vedador deve ser
+compatível com o produto para que não ocorra reações químicas causando vazamento
+e contaminação do produto.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/haha.png}
+  \caption{Massa Epoxi para vedação.}
+  \label{fig:haha}
+\end{figure}
+\FloatBarrier
+\par
+A massa Epoxi Tubolit Mep 301 funciona como proteção anti-corrosiva, proteção
+contra impactos, solda a frio, isolante elétrico, reparos em geral de furos,
+emendas e enchimentos, tanto dentro quanto fora d’água. Para aplicação
+subaquática: Manutenção Nava, Off-shore, Industrial, Construção Civil. Para
+revestimento e reparo em aço, concreto e outros materiais. Estruturas parcial
+ou totalmente submersas, oleodutos, hidroelétricas, plataforma de petróleo,
+estacas de concreto, tanques, reservatórios e caixas d'água.
 \end{description}
