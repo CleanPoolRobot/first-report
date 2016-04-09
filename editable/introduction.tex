@@ -5,10 +5,10 @@ aprimoramento de produtos por meio de automações. Historicamente, a automaçã
 iniciou-se na revolução industrial do século XIX, porém na forma residencial, 
 ela surgiu apenas na década de 70, quando foram lançados nos EUA os primeiros 
 módulos inteligentes que utilizavam a rede elétrica como canal de comunicação 
-entre os diversos dispositivos de automação \cite{sra}. A partir deste início 
+entre os diversos dispositivos de automação \cite{bortoluzzi2013}. A partir deste início 
 houve um aumento do desenvolvimento de dispositivos dedicados (embarcados) por 
 meio da utilização de microprocessadores e microcontroladores. De acordo com 
-Miratori e Bó, o mercado de automação residencial dos Estados Unidos 
+\citeonline{osorio2010}, o mercado de automação residencial dos Estados Unidos 
 movimentou, até 2008, aproximadamente U\$\$ 10,5 bilhões. Além da praticidade 
 e conforto, a segurança e eficiência também são fatores importantes para a 
 escolha dos produtos residenciais. Dentre algumas das automações residenciais 
@@ -22,7 +22,7 @@ equipamento para realizar tal tarefa automática de piscinas \cite{kanno2014}.
 O Brasil é o segundo colocado no ranking mundial de países com maior número de 
 piscinas, com 1,8 milhão de unidades instaladas (sendo 80\% particulares), 
 atrás apenas dos Estados Unidos. O país fatura anualmente cerca de R\$ 4,2 
-bilhões com a construção e manutenção de piscinas (Francal Feira, 2013). Desta 
+bilhões com a construção e manutenção de piscinas \cite{portalfatorbrasil2013}. Desta 
 forma, atividades relacionadas ao uso da piscina estão cada vez mais 
 requisitadas, entre elas a limpeza. A limpeza do fundo da piscina é um processo
 que demanda tempo e esforço físico na sua realização . Uma pesquisa realizada 
@@ -75,7 +75,7 @@ da bomba.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figures/limpa_piscina_auto.png}
+    \includegraphics[width=0.5\textwidth]{figures/limpa_piscina_auto.png}
     \caption{Demonstrativo do percurso de limpeza do robô.}
     \label{fig:schema-way-robot}
   \end{figure}
@@ -98,30 +98,85 @@ outras funções. As principais vantagens na utilização do robô são:
  
 Apesar da grande variedade de marcas e modelos, geralmente esses robôs realizam
 a mesma função. O peso do aparelho varia de 8 até 25 quilos e  custa no mercado
-entre  R\$ 2000,00 e  R\$ 16000,00. Claro que pequenas diferenças de 
-especificação devem ser consideradas no momento da aquisição do aparelho, como 
-por exemplo, ciclo de limpeza e taxa de filtragem. O ciclo de limpeza determina
-o intervalo de tempo em que esse trabalha antes de se desligar automaticamente 
-e a taxa de filtragem é determinada pela quantidade de água filtrada em uma 
+entre  R\$ 2.000,00 e  R\$ 16.000,00. Há diferenças de especificação a serem 
+consideradas na compra, como por exemplo, ciclo de limpeza e taxa de filtragem. 
+O ciclo de limpeza determina o intervalo de tempo em que trabalha-se antes de se desligar automaticamente e a taxa de filtragem é determinada pela quantidade de água filtrada em uma 
 hora, que é expressa em litros por hora (LPH).
 
 Alguns dos concorrentes pesquisados são descritos na tabela abaixo.
 
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{lllll}
-\cline{1-2}
-\multicolumn{1}{|l|}{\textbf{Modelo}} & \multicolumn{1}{c|}{\textbf{Especificações}}                                                                                                                                                                                                                                                                                       &  &  &  \\ \cline{1-2}
-\multicolumn{1}{|l|}{\includegraphics[width=0.4\textwidth]{figures/polaris_sport}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}{\parbox{0.5\textwidth}{
-            \begin{itemize}
-                \item Duração do ciclo: 2,5 horas.
-                \item Peso:19 kg
-                \item Taxa de filtração: 9 m3 LPH.
-                \item Preço: R\$ 5900,00 
-            \end{itemize} }} \\ Produto recomendado para piscinas com\\ comprimento inferior a 12 m. Possui com uma capacidade\\ pequena de armazenamento de detrios.\end{tabular}} &  &  &  \\ \cline{1-2}
-&  &  &  \\ 
-\end{tabular}
+\begin{table}[h]
+    \begin{center}
+    \begin{tabular}{ c  p{6cm}  }
+      \toprule
+      Modelo & Especificações \\ 
+      \cmidrule(r){1-1}\cmidrule(l){2-2}
+      \raisebox{-\totalheight}{\includegraphics[width=0.3\textwidth]{figures/polaris_sport.png}}
+      &
+      \textbf{Polaris 9300 \textit{Sport}}
+      \begin{itemize}[topsep=0pt]
+        \item Duração do ciclo: 2,5 horas;
+        \item Peso: 19 kg;
+        \item Taxa de filtração: 9 m\textsuperscript{3} LPH;
+        \item Preço: R\$ 5.900,00.
+      \end{itemize} \\
+      Recomendado para piscinas com \\
+      comprimento inferior a 12 m. \\
+      Possui capacidade pequena de armazenamento. \\
+      \\ \bottomrule
+    \end{tabular}
+     
+    \begin{tabular}{ c  p{6cm}  }
+      \raisebox{-\totalheight}{\includegraphics[width=0.2\textwidth]{figures/wave-pentair.png}}
+      &
+      \textbf{\textit{Wave} 50 - Pentair Sibrape}
+      \begin{itemize}[topsep=0pt]
+        \item Duração do ciclo: 4 horas;
+        \item Peso: 11 kg;
+        \item Taxa de filtração: 17 m\textsuperscript{3} LPH;
+        \item Preço: R\$ 16.000,00.
+      \end{itemize} \\
+      Recomendado para piscinas com comprimento \\
+      inferior a 20 m. Possui \textit{software} que \\
+      permite maximizar cobertura da área.
+      \\ \bottomrule
+    \end{tabular}
+    
+    \begin{tabular}{ c  p{6cm}  }
+      \raisebox{-\totalheight}{\includegraphics[width=0.2\textwidth]{figures/aquabot-pool.png}}
+      &
+      \textbf{\textit{Aquabot Pool Rover} S2-40}
+      \begin{itemize}[topsep=0pt]
+        \item Duração do ciclo: 1 horas;
+        \item Peso: 11 kg;
+        \item Taxa de filtração: 18 m\textsuperscript{3} LPH;
+        \item Preço: R\$ 2.000,00.
+      \end{itemize} \\
+      Recomendado para piscinas com \\
+      comprimento inferior a 10 m. \\
+      Adapta-se a diversas piscinas. \\
+      \\ \bottomrule
+    \end{tabular}
+    \caption{Análise de Concorrentes}
+    \label{tbl:competitors-analysis}
+  \end{center}
 \end{table}
+
+%\begin{table}[]
+%\centering
+%\caption{My caption}
+%\label{my-label}
+%\begin{tabular}{lllll}
+%\cline{1-2}
+%\multicolumn{1}{|l|}{\textbf{Modelo}} & \multicolumn{1}{c|}{\textbf{Especificações}}                                                                                                                                                                                                                                                                                       %&  &  &  \\ \cline{1-2}
+%\multicolumn{1}{|l|}{\centering \includegraphics[width=0.4\textwidth]{figures/polaris_sport}} & %\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}{\parbox{0.5\textwidth}{
+%            \begin{itemize}
+%                \item Duração do ciclo: 2,5 horas.
+%                \item Peso:19 kg
+%                \item Taxa de filtração: 9 m3 LPH.
+%                \item Preço: R\$ 5900,00 
+%            \end{itemize} }} \\ Produto recomendado para piscinas com\\ comprimento inferior a 12 m. Possui com uma capacidade\\ pequena de armazenamento de detrios.\end{tabular}} &  &  &  \\ \cline{1-2}
+%&  &  &  \\ 
+%\end{tabular}
+%\end{table}
 
