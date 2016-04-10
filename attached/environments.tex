@@ -53,3 +53,19 @@
 {
   \end{list}
 }
+
+\newsavebox{\selvestebox}
+\newenvironment{showmath}[1]
+{
+  \newcommand\colboxcolor{#1}%
+  \begin{lrbox}{ \selvestebox }%
+  \begin{minipage}{ 0.9\textwidth }
+  \begin{displaymath}
+}
+{
+  \end{displaymath}
+  \end{minipage}\end{lrbox}%
+  \begin{center}
+    \colorbox[HTML]{ \colboxcolor }{ \usebox{ \selvestebox } }
+  \end{center}
+}

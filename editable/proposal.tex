@@ -44,7 +44,7 @@ a ser limpada.
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{figures/schema-way-robot.jpg}
-    \caption{Demonstrativo do percurso de limpeza do robô.}
+    \caption{Demonstrativo do percurso de limpeza do robô (\textsf{Autoria do Autor})}
     \label{fig:schema-way-robot}
   \end{figure}
 \par
@@ -58,7 +58,7 @@ uma das bordas da piscina e recolhê-lo quando o processo de limpeza estiver com
 Com o intuito de simplificar o sistema, optou-se por permitir ao robô mover-se apenas
 em duas direções, horizontal e vertical, em ambos os sentidos. Desta forma,
 baseando-se em projetos similares como o descrito na patente \textit{POOL CLEANER
-DIRECTIONAL CONTROL METHOD AND APPARATUS} (2001, patent No:US 6,299,699 B1), o
+DIRECTIONAL CONTROL METHOD AND APPARATUS} \cite{porat2001}, o
 padrão ideal de varredura consiste em uma sequência de travessias longitudinais
 paralelas, partindo de uma borda da piscina à outra, como pode ser visto na figura
 acima.
@@ -98,8 +98,8 @@ componentes eletrônicos envolvidos.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/flow-regular-robot.jpg}
-  \caption{Modo de Operação Regular do \textit{Clean Pool Robot}}
+  \includegraphics[width=0.8\textwidth]{figures/flow-regular-robot.jpg}
+  \caption{Modo de Operação Regular do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
   \label{fig:flow-regular-robot}
 \end{figure}
 \FloatBarrier
@@ -126,8 +126,8 @@ de controle devem seguir para circundar o obstáculo neste caso
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/flow-robot-obstacle.jpg}
-  \caption{Modo de Operação Resposta a Obstáculos do \textit{Clean Pool Robot}}
+  \includegraphics[width=0.7\textwidth]{figures/flow-robot-obstacle.jpg}
+  \caption{Modo de Operação Resposta a Obstáculos do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
   \label{fig:flow-obstacle-robot}
 \end{figure}
 \FloatBarrier
@@ -140,8 +140,8 @@ da piscina.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/flow-initial-robot.jpg}
-  \caption{Modo de Operação Inicial e Final do \textit{Clean Pool Robot}}
+  \includegraphics[width=0.8\textwidth]{figures/flow-initial-robot.jpg}
+  \caption{Modo de Operação Inicial e Final do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
   \label{fig:flow-initial-robot}
 \end{figure}
 \FloatBarrier
@@ -159,8 +159,8 @@ de cada componente utilizado no Robô.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/croqui.png}
-  \caption{ Croqui inicial do \textit{Clean Pool Robot}}
+  \includegraphics[width=0.8\textwidth]{figures/croqui.png}
+  \caption{ Croqui inicial do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
   \label{fig:initial_croqui}
 \end{figure}
 \FloatBarrier
@@ -172,8 +172,8 @@ estrutura conta agora com cantos e arestas arredondadas conforme a Figura.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/better-croqui.png}
-  \caption{ Croqui melhorado do \textit{Clean Pool Robot}}
+  \includegraphics[width=0.8\textwidth]{figures/better-croqui.png}
+  \caption{ Croqui melhorado do \textit{Clean Pool Robot}(\textsf{Autoria do Autor})}
   \label{fig:better-croqui}
 \end{figure}
 \FloatBarrier
@@ -214,7 +214,7 @@ esperada.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/waterbomb.png}
-  \caption{Bomba proposta}
+  \caption{Bomba proposta \cite{westmarine2016}}
   \label{fig:waterbomb}
 \end{figure}
 \FloatBarrier
@@ -225,7 +225,7 @@ há coerência nos cálculos realizados. Sendo assim, o teste irá ser realizado
 com um uma estrutura móvel e uma bomba de aquário. É esperado, com isso, validar
 os cálculos realizados no que tange a movimentação da estrutura. Para isso, é
 necessário utilizar métodos que descrevem os cálculos que regem o movimento. Segundo
-ISE(2000), quando um veículo submersível se movimenta com velocidade constante,
+\citeonline{ise2000}, quando um veículo submersível se movimenta com velocidade constante,
 a propulsão gerada pelos propulsores se iguala à força de arrasto produzida. A
 força de arrasto será obtida a partir da soma da força de arrasto devido a 
 movimentação do veículo mais a força de arrasto devido o cabo de alimentação.
@@ -251,7 +251,7 @@ ar podem ser encontrados tabelados em função da velocidade do veiculo em rela�
 vez que este pode sofrer alterações devido a temperatura envolvida, meio de
 propagação etc. Quando o veículo estudado se movimento em fluido líquido como a
 água por exemplo, o coeficiente de arrasto deve ser medido em função do número
-de Reynolds, (Eng et al., 2008) que por sua vez é calculado pela equação abaixo.
+de Reynolds \cite{eng2008}, que por sua vez é calculado pela equação abaixo.
 \begin{displaymath}
   Re = \frac{VD}{\upsilon}
 \end{displaymath}
@@ -261,7 +261,7 @@ cinemática do fluido.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/graphic-reynolds.png}
-  \caption{Coeficiente de arrasto em função do número de Reynolds}
+  \caption{Coeficiente de arrasto em função do número de Reynolds \cite{eng2008}}
   \label{fig:graphic-reynolds}
 \end{figure}
 \FloatBarrier
@@ -295,13 +295,43 @@ e detritos da água.
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/mesh-aluminium.png}
-    \caption{Modelo de malha de alumínio utilizada como filtro secundário.}
+    \caption{Modelo de malha de alumínio utilizada como filtro secundário. \cite{dx2016}}
     \label{fig:mesh-aluminium}
   \end{figure}
   \FloatBarrier
+  \par
+  \item Elemento Filtrante:
+  \begin{itemize}
+    \item Temperatura de operação:  5ºC mín. a 50ºC máx;
+    \item Vazão: 4.200 litros/hora;
+    \item Grau de filtração: 50 micra (um grão de areia tem entre 200 a 500 micra);
+    \item Peso bruto:448 g;
+    \item Peso líquido: 337g.
+    \item Dimensões: Altura - 254mm; Diâmetro externo - 116mm; Diâmetro interno - 26mm.
+  \end{itemize}
+  Para se garantir a qualidade da água filtrada é indicado pelo fabricante a
+  substituição dos elementos filtrantes \textit{Poly Flow} a cada 6 meses ou quando
+  for observada a redução do fluxo da água. O elemento filtrante é descartável,
+  não necessita retrolavagem. A manutenção periódica do elemento é aconselhável.
+  Para isso, utilize apenas água e uma escova macia.
+  \par
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/filter.png}
+    \caption{Elemento Filtrante - Refil POE IBBL 10'' \textit{Big Blue}}
+    \label{fig:mesh-aluminium}
+  \end{figure}
+  \FloatBarrier
+  \par
+  O elemento filtrante na forma cilíndrica, além de ser o mais encontrado
+  comercialmente, proporcionará ao CPR uma compactação dos dutos de filtragem
+  e uma melhor organização interna para alocação de seus componentes. O modelo
+  de filtro selecionado da \textit{Poly Flow} e similares é o que mais se encaixa as
+  necessidades de projeto e ao volume de trabalho da bomba a ser utilizada. Esses
+  modelos são comumente utilizados na filtragem de caixas d’águas, piscinas e banheiras.
 \end{itemize}
 \par
-O elemento filtrante na forma cilindrica, alem de ser o mais encontrado
+O elemento filtrante na forma cilindrica, além de ser o mais encontrado
 comercialmente, proporcionará ao CPR uma compactação dos dutos de filtragem e
 uma melhor organização interna para alocação de seus componentes. O modelo de
 filtro selecionado da Poly Flow e similares é o que mais se encaixa as
@@ -316,7 +346,7 @@ Figura.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/eletric-motor.png}
-  \caption{Atuação do motor elétrico.}
+  \caption{Atuação do motor elétrico (\textsf{Autoria do Autor})}
   \label{fig:eletric-motor}
 \end{figure}
 \FloatBarrier
@@ -343,7 +373,7 @@ alteração de direção do robo, sendo que apenas efetuará giros de  90º.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/wheels.png}
-  \caption{Localização das rodas e rotação das rodas centrais.}
+  \caption{Localização das rodas e rotação das rodas centrais (\textsf{Autoria do Autor})}
   \label{fig:wheels}
 \end{figure}
 \FloatBarrier
@@ -353,12 +383,12 @@ alteração de direção do robo, sendo que apenas efetuará giros de  90º.
 movimento sem maiores problemas. As cerdas da escova devem possuir elevada
 resistência à tração, resistência à fadiga, baixo coeficiente de atrito e boa
 resistência térmica. Dessa forma como material para as cerdas sugere-se o
-Nylon (Santos, 2010).
+Nylon \cite{santos2010}.
 \par
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/brush.png}
-  \caption{Modelo de escova sugerido para a limpeza da piscina.}
+  \caption{Modelo de escova sugerido para a limpeza da piscina \cite{santaclara2016}}
   \label{fig:brush}
 \end{figure}
 \FloatBarrier
@@ -369,7 +399,7 @@ que farão a limpeza do chão.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/brush-local.png}
-  \caption{Localização das escovas no robô.}
+  \caption{Localização das escovas no robô (\textsf{Autoria do Autor})}
   \label{fig:brush-local}
 \end{figure}
 \FloatBarrier
@@ -409,7 +439,7 @@ conforme a figura abaixo.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/cable-desloc.png}
-  \caption{Deslocamento do cabo dentro da piscina.}
+  \caption{Deslocamento do cabo dentro da piscina \cite{assumpcao2014}}
   \label{fig:cable-desloc}
 \end{figure}
 \FloatBarrier
