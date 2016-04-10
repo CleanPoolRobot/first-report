@@ -147,14 +147,14 @@ da piscina.
 \FloatBarrier
 
 \section{O Corpo do Robô (Aeroespacial, Automotiva e Energia)}
-A figura abaixo mostra a primeira modelagem do\textit{Clean Pool Robot}. O modelo
+A figura \ref{fig:initial_croqui} mostra a primeira modelagem do\textit{Clean Pool Robot}. O modelo
 apresenta uma bomba de sucção (1), uma caixa com os filtros para as impurezas
 (2), dois motores para a rotação das escovas (3), uma saída superior da água
 filtrada (4), quatro rodas próprias para rolagem em ambientes aquáticos (5),
 dois enrolamentos com escovas para soltura da sujeira do piso da piscina (6),
 duas entradas para sucção da água e impurezas do fundo da piscina (7), uma
 entrada da fonte de alimentação externa (8) e uma caixa com os circuitos
-eletrônicos do robô (9). Abaixo da figura estão detalhados as especificações
+eletrônicos do robô (9). Abaixo da figura \ref{fig:initial_croqui} estão detalhados as especificações
 de cada componente utilizado no Robô.
 \par
 \begin{figure}[h]
@@ -168,7 +168,7 @@ de cada componente utilizado no Robô.
 Por motivo de resistência ao movimento o formato do robô foi modificado para
 melhor aproveitamento das forças aerodinâmica envolvidas, as alterações no
 desenho inicial foram feitas com a intenção de diminuir a força de arrasto, a
-estrutura conta agora com cantos e arestas arredondadas conforme a Figura.
+estrutura conta agora com cantos e arestas arredondadas conforme a Figura \ref{fig:better-croqui}.
 \par
 \begin{figure}[h]
   \centering
@@ -288,15 +288,15 @@ e detritos da água.
   na filtragem de caixas d’águas. As imagens dos filtros a serem utilizados e as
   especificações técnicas do elemento filtrante principal constam a seguir.
   \item Malha de Alumínio: A malha de alumínio é um material durável, altamente
-  resistente água, não precisa de manutenção e nem de troca. Em caso de avaria na
+  resistente a água, não precisa de manutenção e nem de troca. Em caso de avaria na
   grade a substituição é simples e barata. A grade será localizada na entrada
-  da caixa filtradora, no duto de acesso na base do robô, conforme imagem abaixo.
+  da caixa filtradora, no duto de acesso na base do robô, conforme a Figura \ref{fig:mesh-aluminium}.
   \par
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/mesh-aluminium.png}
     \caption{Modelo de malha de alumínio utilizada como filtro secundário. \cite{dx2016}}
-    \label{fig:mesh-aluminium}
+    \label{fig:filter}
   \end{figure}
   \FloatBarrier
   \par
@@ -341,7 +341,7 @@ e banheiras.
 
 \item[Motor:] Serão utilizados dois motores elétricos para rotacionar as escovas.
 a transmissão do torque para as escovas será por engrenagens, como ilustrado na
-Figura.
+Figura \ref{fig:eletric-motor}.
 \par
 \begin{figure}[h]
   \centering
@@ -383,7 +383,7 @@ alteração de direção do robo, sendo que apenas efetuará giros de  90º.
 movimento sem maiores problemas. As cerdas da escova devem possuir elevada
 resistência à tração, resistência à fadiga, baixo coeficiente de atrito e boa
 resistência térmica. Dessa forma como material para as cerdas sugere-se o
-Nylon \cite{santos2010}.
+\textit{Nylon} \cite{santos2010}.
 \par
 \begin{figure}[h]
   \centering
@@ -405,7 +405,7 @@ que farão a limpeza do chão.
 \FloatBarrier
 \par
 A movimentação das escovas será realizada por meio de engrenagens, como ilustrados
-na Figura abaixo. O motor elétrico fornecerá um torque e o sistema de
+na Figura \ref{fig:brush-system}. O motor elétrico fornecerá um torque e o sistema de
 engrenagem transmitirá para o eixo, fazendo com que as escovas rotacionem.
 \par
 \begin{figure}[h]
@@ -434,7 +434,7 @@ Onde o $L$ é o comprimento total do cabo de energia do robô, $d$ é a distânc
 tomada até a borda da piscina e $D$ é a distância a borda até o fundo da
 extremidade oposta a ela. Assim o cabo terá $L = 16,6 \approx 17m$. Considerando que
 a entrada do cabo na piscina se fará no ponto $P_ {ent}$, na metade da piscina,
-conforme a figura abaixo.
+conforme a Figura \ref{fig:cable-desloc}.
 \par
 \begin{figure}[h]
   \centering
@@ -472,20 +472,25 @@ estacas de concreto, tanques, reservatórios e caixas d'água.
 \end{description}
 
 \section{A Mente Do Robô (Eletrônica e Software)}
+A figura \ref{fig:schema-interactive-electro-soft} mostra a primeira esquematização
+da interação entre os componentes eletrônicos e os de \software. O modelo
+apresenta uma \textit{raspberry pi} (10), sensores de distância (11), pressão (12) e
+um acelerômetro/giroscópio (13), um conjunto de pinos (GPIO) (14), servo motor (15),
+relês (16), \textit{driver} da GPIO (17) e os serviços disponibilizados pelo \software  (18).
+Abaixo da figura \ref{fig:schema-interactive-electro-soft} estão detalhados as especificações
+de cada um desses componentes.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/schema-interactive-eletro-soft.jpg}
-  \caption{Esquemático da Interação entgre Eletrônica e Software}
+  \includegraphics[width=\textwidth]{figures/schema-interactive-eletro-soft.png}
+  \caption{Esquemático da Interação entgre Eletrônica e Software (\textsf{Autoria do Autor})}
   \label{fig:schema-interactive-electro-soft}
 \end{figure}
 \FloatBarrier
 \par
-A figura demonstra a interação dos componentes eletrônicos e o \textit{software}.
-\par
 Os periféricos fornecerão dados que, por sua vez, serão passados ao \textit{driver} por
-meio de dispositivo de \textit{hardware} (GPIO).  O \textit{driver} será responsável por permitir
-a comunicação entre o \textit{hardware} e o \textit{software} que, na figura, é representado pelos
+meio de dispositivo de \hardware (GPIO).  O \textit{driver} será responsável por permitir
+a comunicação entre o \hardware e o \software que, na figura, é representado pelos
 serviços que deve fornecer ao sistema. Cada serviço tratará os dados de entrada
 conforme a especificidade solicitada e, em seguida, retorna uma saída para um
 atuador, por meio do \textit{driver}.
@@ -493,17 +498,16 @@ atuador, por meio do \textit{driver}.
 \begin{description}
 \item[\textit{Raspberry pi} 2 B:] Com o objetivo de desenvolver um robô é
 necessário ter uma central de processamento de dados, a \textit{Raspberry pi} foi
-escolhida pelo seu numero de portas GPIO aonde pode ser desenvolvido a solução
-de sensores que existe para o problema, e também há a possibilidade de, caso
-venham a aparecer a necessidade de mais sensores. A \textit{Raspberry pi} tem suporte a
+escolhida pelo seu número de portas GPIO aonde pode ser desenvolvido a solução
+de sensores que existe para o problema. A \textit{Raspberry pi} tem suporte a
 sistema operacional, o que permite o uso de uma extensão maior de bibliotecas
-como a biblioteca \textit{pthread}, também há a possibilidade do uso de varias linguagens
+como a biblioteca \textit{pthread}, também há a possibilidade do uso de várias linguagens
 de programação.
 \par
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/rpi2b.jpg}
-  \caption{\textit{Raspberry pi 2 B}}
+  \caption{\textit{Raspberry pi 2 B} \cite{raspfoundation2016}}
   \label{fig:raspberry2b}
 \end{figure}
 \FloatBarrier
@@ -511,14 +515,14 @@ de programação.
 \item[GPIO:] \textit{Generic Ports Input Output} são saídas e entradas de tensão.
 Elas servem para fazer a comunicação do processador com componentes externos,
 sensores e atuadores e outros tipos de componentes eletrônicos. Algumas dessas
-portas tem usos predefinidos pelo fabricante do \textit{hardware} como saídas de
+portas tem usos predefinidos pelo fabricante do \hardware como saídas de
 alimentação genérica, e terras, outras dos pinos são de uso genérico. A
 \textit{Raspberry pi} tem 40 GPIO, aonde dessas 17 são para uso genérico.
 \par
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/gpio.png}
-  \caption{GPIO \textit{Raspberry pi 2 B}}
+  \caption{GPIO \textit{Raspberry pi 2 B} \cite{raspfoundationgpio2016}}
   \label{fig:raspberry2b}
 \end{figure}
 \FloatBarrier
@@ -539,7 +543,7 @@ da câmara, e fora do robô.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/pressure-sensor.png}
-  \caption{Sensor de pressão MPX4250GP}
+  \caption{Sensor de pressão MPX4250GP \cite{octopart2016}}
   \label{fig:pressure-sensor}
 \end{figure}
 \FloatBarrier
@@ -559,7 +563,7 @@ pinos necessários pare ler os dados do sensor.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/accelerometer.png}
-  \caption{Acelerômetro/Giroscópio MPU-6050}
+  \caption{Acelerômetro/Giroscópio MPU-6050 \cite{arduino2016}}
   \label{fig:accelerometer}
 \end{figure}
 \FloatBarrier
@@ -576,7 +580,7 @@ rotação (360º) e uma maior torque.
 	\includegraphics[height=5cm]{figures/servant-motor.png}
 	\quad
 	\includegraphics[height=5cm]{figures/micro-motor.png}
-  \caption{Servo Motores.}
+  \caption{Servo Motores \cite{flipflop2013} e \cite{flipflop2016}, respectivamente}
 \end{figure}
 \FloatBarrier
 
@@ -585,15 +589,15 @@ de alta tensão usando como chaves circuitos de baixa tensão, além disso os
  relés servem para isolar os circuitos de baixa tensão dos de alta tensão.
  
 \item[\textit{Driver} GPIO:] O driver é um software que habilita a comunicação
-entre o \textit{hardware} e o \textit{software}. A partir do driver é possível consumir os
-dados advindos dos componentes de \textit{hardware}, fazer o devido tratamento e, se
-necessário, enviar uma resposta ao\textit{hardware} \cite{windows2016}. Para o projeto foram
+entre o \hardware e o \software. A partir do driver é possível consumir os
+dados advindos dos componentes de \hardware, fazer o devido tratamento e, se
+necessário, enviar uma resposta ao\hardware \cite{windows2016}. Para o projeto foram
 identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza
-o Raspberry. Essas bibliotecas fazem a interface entre o \textit{hardware} e o
-\textit{middleware}, de forma que essas APIs fazem o papel do driver.
+o Raspberry. Essas bibliotecas fazem a interface entre o \hardware e o
+\middleware, de forma que essas APIs fazem o papel do driver.
 
-\item[\textit{Middleware} (Serviço):] é um \textit{software} que conecta outros componentes
-de \textit{software}. Uma camada de infraestrutura que viabiliza o desenvolvimento de
+\item[\textit{Middleware} (Serviço):] é um \software que conecta outros componentes
+de \software. Uma camada de infraestrutura que viabiliza o desenvolvimento de
 aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados
 pela aplicação de negócio \cite{oracle2016}. O middleware fornecerá serviços base para
 o robô, como ativação dos motores, escova e uso dos sensores.
@@ -605,22 +609,22 @@ A figura abaixo mostra a abstração da arquitetura do sistema associado ao proj
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/schema-arch.jpg}
-  \caption{Arquitetura em Camadas do \textit{Software}.}
+  \caption{Arquitetura em Camadas do \textit{Software} (\textsf{Autoria do Autor})}
   \label{fig:schema-arch}
 \end{figure}
 \FloatBarrier
 
 O sistema segue uma arquitetura em camadas. A partir do hardware os dados serão
-capturados. O \textit{driver} fará a ponte de comunicação entre o \textit{hardware}
-e o \textit{middleware}, permitindo que os dados possam ser trabalhados pela aplicação de
-negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \textit{middleware},
+capturados. O \textit{driver} fará a ponte de comunicação entre o \hardware
+e o \middleware, permitindo que os dados possam ser trabalhados pela aplicação de
+negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \middleware,
 afim de tratar os dados recebidos e fornecer instruções ao robô. Uma visão
 ampliada da arquitetura está disponível na figura abaixo.
 \par
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/schema-layer-arch.jpg}
-  \caption{Detalhamento das Camadas e Interação dos componentes}
+  \caption{Detalhamento das Camadas e Interação dos componentes (\textsf{Autoria do Autor})}
   \label{fig:schema-layer-arch}
 \end{figure}
 \FloatBarrier
