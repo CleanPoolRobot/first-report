@@ -471,9 +471,9 @@ ou totalmente submersas, oleodutos, hidroelétricas, plataforma de petróleo,
 estacas de concreto, tanques, reservatórios e caixas d'água.
 \end{description}
 
-\section{A Mente Do Robô (Eletrônica e Software)}
+\section{A Mente Do Robô (Eletrônica e Software)} \label{sec:mind-robot}
 A figura \ref{fig:schema-interactive-electro-soft} mostra a primeira esquematização
-da interação entre os componentes eletrônicos e os de \software. O modelo
+da interação entre os componentes eletrônicos e os de \textit{software}. O modelo
 apresenta uma \textit{raspberry pi} (10), sensores de distância (11), pressão (12) e
 um acelerômetro/giroscópio (13), um conjunto de pinos (GPIO) (14), servo motor (15),
 relês (16), \textit{driver} da GPIO (17) e os serviços disponibilizados pelo \software  (18).
@@ -496,13 +496,15 @@ conforme a especificidade solicitada e, em seguida, retorna uma saída para um
 atuador, por meio do \textit{driver}.
 \par
 \begin{description}
-\item[\textit{Raspberry pi} 2 B:] Com o objetivo de desenvolver um robô é
-necessário ter uma central de processamento de dados, a \textit{Raspberry pi} foi
-escolhida pelo seu número de portas GPIO aonde pode ser desenvolvido a solução
-de sensores que existe para o problema. A \textit{Raspberry pi} tem suporte a
-sistema operacional, o que permite o uso de uma extensão maior de bibliotecas
-como a biblioteca \textit{pthread}, também há a possibilidade do uso de várias linguagens
-de programação.
+\item[\rasp 2 B:] Com o objetivo de desenvolver um robô é necessário ter uma
+central de processamento de dados, a \rasp  foi escolhida pelo seu número de
+portas GPIO aonde pode ser desenvolvida a solução de sensores que existe
+para o problema. Além disso, seu suporte a sistema operacional, o que permite
+o uso de uma extensão maior de bibliotecas como a biblioteca \textit{pthread},
+e a possibilidade do uso de várias linguagens de programação também foram motivos
+para a escolha. \rasp é baseado em um \textit{SoC} - \textit{System on a Chip} -
+da \textit{Broadcom}, conhecido como \textsf{bcm2835}. Possui um processador
+de 700 MHz e memória RAM de 512 MB \cite{raspfoundation2014}.
 \par
 \begin{figure}[h]
   \centering
@@ -517,7 +519,7 @@ Elas servem para fazer a comunicação do processador com componentes externos,
 sensores e atuadores e outros tipos de componentes eletrônicos. Algumas dessas
 portas tem usos predefinidos pelo fabricante do \hardware como saídas de
 alimentação genérica, e terras, outras dos pinos são de uso genérico. A
-\textit{Raspberry pi} tem 40 GPIO, aonde dessas 17 são para uso genérico.
+\textit{Raspberry pi} tem 40 pinos, aonde dessas 17 são para uso genérico.
 \par
 \begin{figure}[h]
   \centering
@@ -570,7 +572,7 @@ pinos necessários pare ler os dados do sensor.
 
 \item[Servo Motor:] Servos motores são utilizados para rotacionar um eixo até
 uma posição desejada. Esses motores são normalmente motores de alto torque.
-Dois servos (Micro Servo 9g SG90 TowerPro) serão utilizados para rotacionar
+Dois servos (Micro Servo 9g e SG90 TowerPro) serão utilizados para rotacionar
 as rodas (5), o principal motivo de escolher esse modelo é ele ter torque
 suficiente para mover as mesmas e ter baixo custo, E para mover a saída de água
 (4) da bomba foi escolhido um servo motor (SM-S4306R) com maior liberdade de
@@ -588,22 +590,65 @@ rotação (360º) e uma maior torque.
 de alta tensão usando como chaves circuitos de baixa tensão, além disso os
  relés servem para isolar os circuitos de baixa tensão dos de alta tensão.
  
-\item[\textit{Driver} GPIO:] O driver é um software que habilita a comunicação
-entre o \hardware e o \software. A partir do driver é possível consumir os
-dados advindos dos componentes de \hardware, fazer o devido tratamento e, se
-necessário, enviar uma resposta ao\hardware \cite{windows2016}. Para o projeto foram
-identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza
-o Raspberry. Essas bibliotecas fazem a interface entre o \hardware e o
-\middleware, de forma que essas APIs fazem o papel do driver.
+\item[\textit{Driver} GPIO:] O driver é um \software que habilita a comunicação
+entre o \hardware e o \textit{software}. A partir do \textit{driver} é possível consumir os
+dados advindos dos componentes de \textit{hardware}, fazer o devido tratamento e, se
+necessário, enviar uma resposta \cite{windows2016}. Para o projeto foi
+identificada a biblioteca \textsf{bcm2835.h}, desenvolvida por Mike McCauley,
+que fará interface entre o \hardware e o \middleware, de forma que essa API
+terá o papel do \textit{driver}. Segundo \citeonline{mccauley2015}, a
+\textsf{bcm835.h} fornece acesso à GPIO e demais funções da \textit{Broadcom}
+bcm2835, além de permitir acesso de leitura de sinais digitais, bem como de
+envio de sinais digitais, por meio da SPI ou I2C.
+\par
+A \textsf{bcm2835.h} é compatível com C++, bastando para o seu uso a adição do
+\textit{header} no código-fonte \cite{mccauley2015}. A documentação da
+\textsf{bcm2835.h} é extensa, o que provê suporte considerável para a equipe.
+Essa biblioteca é dividida em oito módulos:
+\begin{itemize}
+  \item Constantes para passagem: fornece \textsf{MACROs} para serem utilizadas
+  pela própria biblioteca ou programas externos que a estejam utilizando. Por
+  meio desse módulo pode-se, por exemplo, fazer a referência para um pino apenas
+  utilizando uma \textsf{MACRO}, sem preocupar-se como isso é referenciado
+  internamente \cite{mccauley2015}.
+  
+  \item Biblioteca de inicialização e gerenciamento: permite a inicialização da
+  \textit{broadcom} bcm2835 e seu gerenciamento \cite{mccauley2015}.
+  
+  \item Acesso de registro de baixo nível: normalmente o seu uso é desnecessário.
+  Fornece funções para o registro de baixo nível de informações \cite{mccauley2015}.
+  
+  \item  Acesso ao registro na GPIO: fornece funções que providenciam meios de ter
+  acesso à interface da GPIO. Por meio dessas funções pode-se fazer a leitura do
+  estado de cada pino, bem como ajustar o estado de saída para cada pino
+  \cite{mccauley2015}.
+  
+  \item Acesso à SPI: permite o uso da SPI0 (\textit{Serial Peripheral Interface})
+  para a comunicação com dispositivos externos SPI \cite{mccauley2015}.
+  
+  \item Acesso à I2C: fornece funções para uso da I2C (A \textit{Broadcom}
+  barramento de controle de série com o barramento/interface Philips I2C
+  versão 2.1 Janeiro de 2000) para comunicação com dispositivos externos
+  I2C \cite{mccauley2015}.
+  
+  \item Acesso ao Sistema de Tempo: permite acesso funções relativas ao
+  sistema contador de tempo \cite{mccauley2015}.
+  
+  \item Modularização de Largura de Pulso: permite o controle e a configuração
+  de dois canais indepentendes de PWM. Cada um dos canais pode ser conectado a
+  um subconjunto limitado de pinos da GPIO.
+\end{itemize}
 
 \item[\textit{Middleware} (Serviço):] é um \software que conecta outros componentes
-de \software. Uma camada de infraestrutura que viabiliza o desenvolvimento de
+de \textit{software}. Uma camada de infraestrutura que viabiliza o desenvolvimento de
 aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados
-pela aplicação de negócio \cite{oracle2016}. O middleware fornecerá serviços base para
-o robô, como ativação dos motores, escova e uso dos sensores.
+pela aplicação de negócio \cite{oracle2016}. O \middleware fornecerá serviços base para
+o robô, como ativação dos motores, escova e uso dos sensores. Inicialmente, imaginou-se
+a disponibilização de serviços para ativação de motores, bomba, escovas e leitura do
+\textit{output} dos sensores.
 \end{description}
 
-\subsection{Arquitetura de \textit{Software}}
+\subsection{Arquitetura de \textit{Software} e Programação}
 A figura abaixo mostra a abstração da arquitetura do sistema associado ao projeto.
 \par
 \begin{figure}[h]
@@ -613,13 +658,13 @@ A figura abaixo mostra a abstração da arquitetura do sistema associado ao proj
   \label{fig:schema-arch}
 \end{figure}
 \FloatBarrier
-
+\par
 O sistema segue uma arquitetura em camadas. A partir do hardware os dados serão
 capturados. O \textit{driver} fará a ponte de comunicação entre o \hardware
 e o \middleware, permitindo que os dados possam ser trabalhados pela aplicação de
 negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \middleware,
 afim de tratar os dados recebidos e fornecer instruções ao robô. Uma visão
-ampliada da arquitetura está disponível na figura abaixo.
+ampliada da arquitetura está disponível na Figura \ref{fig:schema-layer-arch}.
 \par
 \begin{figure}[h]
   \centering
@@ -628,3 +673,33 @@ ampliada da arquitetura está disponível na figura abaixo.
   \label{fig:schema-layer-arch}
 \end{figure}
 \FloatBarrier
+\par
+Foi selecionada a linguagem de programação \textsf{C++} para o desenvolvimento
+do projeto, por diversos aspectos associados a ela:
+\begin{itemize}
+  \item Linguagem multiparadigma: permite o uso de ferramentas relativas
+  ou paradigma estruturado, orientado a objetos e programação genérica. Essa
+  característica, segundo \cite{stroustrup2012}, criador da linguagem, apresenta
+  ao programador a possibilidade de utilizar as melhores características de
+  cada forma de programação.
+  
+  \item Linguagem de baixo nível: linguagem voltada a aplicações que exigem
+  a compreensão da arquitetura do computador.
+  
+  \item Biblioteca Padrão de \textit{Templates}: fornece diversas classes e
+  funções que facilitam a produção de \textit{software}, evitando retrabalho.
+\end{itemize}
+\par
+O desenvolvimento do \software será cooperativo e distribuído. Conforme descrito na
+seção \ref{sec:mind-robot}, a \rasp permite o uso de um sistema operacional. Para
+padronizar o desenvolvimento com o mesmo sistema operacional instalado na
+\textit{Raspberry pi}, usar-se-á a ferramenta de virtualização \textsf{Vagrant}.
+O \textsf{Vagrant} é .... definição ....
+Isso permitirá também que o ambiente de desenvolvimento de cada membro da equipe
+seja igual, com as mesmas bibliotecas instaladas e ferramentas. Essa padronização
+evitará dificuldades de compatibilidade entre o ambiente dos desenvolvedores e o
+instalado na \textit{Raspberry pi}.
+\par
+Abaixo consta a listagem do código de configuração da \textit{box} criada para o
+projeto:
+[LISTAGEM DO CÓDIGO DO VAGRANT]
