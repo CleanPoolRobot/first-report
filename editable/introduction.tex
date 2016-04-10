@@ -3,7 +3,7 @@ O ser humano busca cada vez mais produtos que facilitem e tornem tarefas
 diárias mais eficientes. Essa busca gerou ao longo da história inovações e 
 aprimoramento de produtos por meio de automações. Historicamente, a automação 
 iniciou-se na revolução industrial do século XIX, porém na forma residencial, 
-ela surgiu apenas na década de 70, quando foram lançados nos EUA os primeiros 
+ela surgiu apenas na década de 70. Isso ocorreu quando nos EUA com lançamento dos primeiros 
 módulos inteligentes que utilizavam a rede elétrica como canal de comunicação 
 entre os diversos dispositivos de automação \cite{bortoluzzi2013}. A partir deste início 
 houve um aumento do desenvolvimento de dispositivos dedicados (embarcados) por 
@@ -19,19 +19,19 @@ onda de automação residencial, observou-se a oportunidade de produzir um
 equipamento para realizar tal tarefa automática de piscinas \cite{kanno2014}.
 
 \section{Contextualização}
-O Brasil é o segundo colocado no ranking mundial de países com maior número de 
+O Brasil é o segundo colocado no \textit{ranking} mundial de países com maior número de 
 piscinas, com 1,8 milhão de unidades instaladas (sendo 80\% particulares), 
 atrás apenas dos Estados Unidos. O país fatura anualmente cerca de R\$ 4,2 
 bilhões com a construção e manutenção de piscinas \cite{portalfatorbrasil2013}. Desta 
 forma, atividades relacionadas ao uso da piscina estão cada vez mais 
 requisitadas, entre elas a limpeza. A limpeza do fundo da piscina é um processo
-que demanda tempo e esforço físico na sua realização . Uma pesquisa realizada 
+que demanda tempo e esforço físico na sua realização. Uma pesquisa realizada 
 em  março de 2014 no Estado de São Paulo apontou que o valor médio mensal da 
-mão de obra para limpeza de piscinas de até 60 métros cúbicos, com equipamento exceto 
+mão de obra para limpeza de piscinas de até 60 metros cúbicos, com equipamento exceto 
 produtos para limpeza e manutenção,  foi de R\$ 303,00. Um valor que se torna 
-cada vez mais significativo se imaginarmos piscinas maiores \cite{datafolha2014}. 
+cada vez mais significativo se imaginar-se piscinas maiores \cite{datafolha2014}. 
 Com isso, várias empresas vêm investindo no desenvolvimento de robôs que possam
-realizar aspiração de piscinas.No Brasil existem basicamente 3 tipos de 
+realizar aspiração de piscinas. No Brasil existem basicamente 3 tipos de 
 produtos que realizam a tarefa de limpeza: aspiradores manuais que são os mais 
 comuns no mercado, aspiradores robóticos, totalmente automatizados porém com 
 alto custo, e aspiradores autônomos porém pouco eficazes \cite{miura2006}.
@@ -52,7 +52,7 @@ Esse trabalho visa alcançar os objetivos, geral e específicos, apresentados a
 seguir:
 
 \subsection{Objetivo Geral}
-O projeto tem por finalidade o desenvolvimento de um robô que realiza a limpeza
+O projeto tem por finalidade o desenvolvimento de um robô que realiza a higienização
 do fundo de piscinas.
 
 \subsection{Objetivos Específicos}
@@ -76,8 +76,8 @@ da bomba.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/limpa_piscina_auto.png}
-    \caption{Demonstrativo do percurso de limpeza do robô.}
+    \includegraphics[width=0.4\textwidth]{figures/limpa_piscina_auto.png}
+    \caption{Ilustração de um aspirador de piscinas automático.}
     \label{fig:schema-way-robot}
   \end{figure}
 
@@ -89,19 +89,15 @@ expelindo-a a uma velocidade superior de volta para a piscina, e um motor
 responsável pela locomoção. As cerdas realizam a escovação do fundo da piscina 
 e um sistema de controle é responsável por todas as ações relacionadas à 
 mudança de direção, detecção de obstáculos, limites e possíveis problemas entre
-outras funções. As principais vantagens na utilização do robô são:
-
-\begin{itemize}
-  \item retirar detritos que não foram alcançados pelo aspirador;
-  \item absorver os detritos flutuantes da água;
-  \item mover a água ao passo que limpa as superficies, melhorando a sua circulação.
-\end{itemize}
+outras funções. Retirar detritos inalcançáveis pelo aspirador ou que estejam flutuando
+e a movimentação da água enquanto limpa a superfície, melhorando a circulação, são
+as principais vantagens na utilização do robô.
  
 Apesar da grande variedade de marcas e modelos, geralmente esses robôs realizam
 a mesma função. O peso do aparelho varia de 8 até 25 quilos e  custa no mercado
 entre  R\$ 2.000,00 e  R\$ 16.000,00. Há diferenças de especificação a serem 
 consideradas na compra, como por exemplo, ciclo de limpeza e taxa de filtragem. 
-O ciclo de limpeza determina o intervalo de tempo em que trabalha-se antes de se desligar automaticamente e a taxa de filtragem é determinada pela quantidade de água filtrada em uma 
+O ciclo de limpeza determina o intervalo de tempo em que se trabalha antes de se desligar automaticamente e a taxa de filtragem é determinada pela quantidade de água filtrada em uma 
 hora, que é expressa em litros por hora (LPH).
 
 Alguns dos concorrentes pesquisados são descritos na tabela abaixo.
@@ -162,19 +158,20 @@ Alguns dos concorrentes pesquisados são descritos na tabela abaixo.
     \label{tbl:competitors-analysis}
   \end{center}
 \end{table}
+\FloatBarrier
 
 \subsection{Visita Técnica}
 Para o melhor desenvolvimento do produto e para identificar os possíveis 
 concorrentes, foi realizado uma vista técnica na empresa \textit{Aqua Piscina}, na 
 sexta-feira 01/04/2016, a uma revendedora de robôs especializados na limpeza de
-piscina. Dentre os robôs, foi analisado o que mais se assemelhava com o que 
+piscinas. Dentre os robôs, foi analisado o que mais se assemelhava com o que 
 será desenvolvido por esse trabalho, o \textit{Robot XT5}, conforme ilustrado na 
-Figura \ref{fig:robo_visited} abaixo:
+Figura \ref{fig:robo_visited}:
 
 \begin{figure}[!htp]
    \centering
     \includegraphics[width=0.35\textwidth]{figures/robo_visited.jpg}
-    \caption{Robô visitado}
+    \caption{Robô visitado: \textit{Robot XT5}}
     \label{fig:robo_visited}
 \end{figure}
 
@@ -191,6 +188,7 @@ sistema de vedação do circuito observados no produto.
     \caption{Visão inferior do \textit{Robot XT5}}
     \label{fig:bottow_view_robot}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[!h]
    \centering
@@ -198,10 +196,11 @@ sistema de vedação do circuito observados no produto.
     \caption{Filtro utilizado no \textit{Robot XT5}}
     \label{fig:robot_filter}
 \end{figure}
+\FloatBarrier
 
-Assim, foi possível analisar todo o sistema do Robot, que vai desde área de 
-vedação até a movimentação prática do mesmo. Importante ressaltar que o robô 
+Assim, foi possível analisar todo o sistema do robô, que vai desde área de 
+vedação até a movimentação prática. Importante ressaltar que o robô 
 analisado apresentou setores muito interessantes, no que se refere ao formato 
 e localização dos componentes, os quais poderão ser utilizados de forma 
-semelhante no Clean Pool.
+semelhante no \textit{Clean Pool Robot}.
 
