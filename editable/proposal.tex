@@ -694,12 +694,83 @@ O desenvolvimento do \software será cooperativo e distribuído. Conforme descri
 seção \ref{sec:mind-robot}, a \rasp permite o uso de um sistema operacional. Para
 padronizar o desenvolvimento com o mesmo sistema operacional instalado na
 \textit{Raspberry pi}, usar-se-á a ferramenta de virtualização \textsf{Vagrant}.
-O \textsf{Vagrant} é .... definição ....
-Isso permitirá também que o ambiente de desenvolvimento de cada membro da equipe
-seja igual, com as mesmas bibliotecas instaladas e ferramentas. Essa padronização
-evitará dificuldades de compatibilidade entre o ambiente dos desenvolvedores e o
-instalado na \textit{Raspberry pi}.
+O \textsf{Vagrant} é uma ferramenta para a construção de ambientes de desenvolvimento
+focada num fluxo de trabalho simples e automação da configuração desse ambiente
+\cite{hashicorp2016}.
 \par
-Abaixo consta a listagem do código de configuração da \textit{box} criada para o
+O uso do \textsf{Vagrant} permitirá também que o ambiente de desenvolvimento de
+cada membro da equipe seja igual, com as mesmas bibliotecas instaladas e ferramentas.
+Essa padronização evitará dificuldades de compatibilidade entre o ambiente dos
+desenvolvedores e o instalado na \textit{Raspberry pi}.
+\par
+O Código \ref{vagrantfile} mostra as configurações da \textit{box} criada para o
 projeto:
-[LISTAGEM DO CÓDIGO DO VAGRANT]
+\par
+\begin{lstlisting}[language=Ruby, label=vagrantfile, caption=\textsf{Vagrantfile} inicial]
+Vagrant.configure(2) do |config|
+  config.vm.box = "debian/jessie64"
+
+  config.vm.provision "shell", path: "scripts/gpp.sh"
+  config.vm.provision "shell", path: "scripts/libraries.sh"
+end
+\end{lstlisting}
+\par
+Observa-se pelo Código \ref{vagrantfile} que as configurações foram divididas em
+dois \textit{scripts}, descritos nos Códigos \ref{gpp.sh} e \ref{libraries.sh}.
+\par
+\begin{lstlisting}[language=bash, label=gpp.sh, caption=\textsf{Script} para instalação
+de ferramentas de compilação]
+#!/usr/bin/env bash
+
+echo "Installing: ( 1 ) g++, ( 2 ) gcc and ( 3 ) make"
+
+echo "Install g++: starting"
+sudo apt-get install g++ -y
+echo "Install g++: DONE"
+
+echo "Install gcc: starting"
+sudo apt-get install gcc -y
+echo "Install gcc: DONE"
+
+echo "Install Make: starting"
+sudo apt-get install build-essential
+echo "Install Make: DONE"
+\end{lstlisting}
+\par
+\begin{lstlisting}[language=bash, label=libraries.sh, caption=\textsf{Script} para instalação
+de bibliotecas externas]
+#!/usr/bin/env bash
+
+echo "Installing: ( 1 ) bcm2835 and ( 2 ) boost-libraries"
+
+echo "Install bcm2835.h: starting"
+sudo wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
+tar zxvf bcm2835-1.50.tar.gz
+rm bcm2835-1.50.tar.gz
+cd bcm2835-1.50
+./configure
+make
+sudo make check
+sudo make install
+echo "Install bcm2835.h: DONE"
+
+echo "Updating: starting"
+sudo apt-get update
+echo "Updating: DONE"
+
+echo "Install boost-libraries: starting"
+sudo apt-get install libboost-all-dev -y
+echo "Install boost-libraries: DONE"
+\end{lstlisting}
+\par
+Será utilizado também uma ferramenta para o controle de versão do código. O
+\textsf{Git} foi selecionado para cumprir essa função, enquanto que o
+\textsf{GitHub} foi escolhido como repositório remoto. O controle de versão permite
+o gerenciamento das diversas versões de um determinado documento. É comum o
+seu uso no desenvolvimento de \textit{software}, o que fornece um controle do histórico
+de alterações, permitindo o resgate de versões antigas. Outra vantagem no uso desse
+tipo de sistema é a facilidade em trabalhar em equipe sobre os mesmos documentos,
+pois fornece ferramentas que minimizam problemas de conflito de alterações. A
+divisão do projeto em ramos de trabalho, permitindo o desenvolvimento paralelo
+de diferentes partes do \software pela equipe, também é uma vantagem no
+versionamento do código.
