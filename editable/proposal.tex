@@ -25,7 +25,7 @@ o usuário deverá limpar os filtros internos do \textit{Clean Pool Robot}.
 \par
 O produto desenvolvido será responsável apenas pela retirada da sujeira decantada
 no fundo da piscina, ou seja, o \textit{Clean Pool Robot} não limpará as paredes
-ou superfície da piscina. Além disso, as piscinas ideais para a operação do Robot
+ou superfície da piscina. Além disso, as piscinas ideais para a operação do robô
 são as retangulares, sem inclinações e azulejadas. É ideal também que o robô seja
 lançado na piscina no meio da largura maior, evitando que o fio fique totalmente
 esticado quando o robô estiver na quina oposta do lançamento.
@@ -52,7 +52,7 @@ O robô limpador foi projetado para ser capaz de percorrer toda a área da super
 inferior de piscinas retangulares e sem inclinação. A varredura é feita de forma
 totalmente autônoma pelo sistema, com a \textit{Raspberry pi} como unidade central de
 controle de todos elementos periféricos: sensores de distância, servo motores,
-sensores de pressão, etc. É necessário o usuário apenas posicionar o limpador em
+sensores de pressão, etc. É necessário o usuário apenas posicionar o robô em
 uma das bordas da piscina e recolhê-lo quando o processo de limpeza estiver completo.
 \par
 Com o intuito de simplificar o sistema, optou-se por permitir ao robô mover-se apenas
@@ -60,22 +60,22 @@ em duas direções, horizontal e vertical, em ambos os sentidos. Desta forma,
 baseando-se em projetos similares como o descrito na patente \textit{POOL CLEANER
 DIRECTIONAL CONTROL METHOD AND APPARATUS} \cite{porat2001}, o
 padrão ideal de varredura consiste em uma sequência de travessias longitudinais
-paralelas, partindo de uma borda da piscina à outra, como pode ser visto na figura
-acima.
+paralelas, partindo de uma borda da piscina à outra, como pode ser visto na Figura
+\ref{fig:schema-way-robot}.
 \par
-O limpador inicia o processo de varredura assim que os sensores de distância,
+O robô inicia o processo de varredura assim que os sensores de distância,
 localizados em cada uma das laterais do robô, detectam que ele se encontra em
-uma das quinas da piscina (1).  O limpador segue em linha reta em direção à
+uma das quinas da piscina (1).  O robô segue em linha reta em direção à
 próxima parede, com os motores das escovas ativados para fazer a limpeza do chão.
-Uma vez próximo à parede, limpador então desloca-se para a direita cerca de 20
+Uma vez próximo à parede, robô então desloca-se para a direita cerca de 20
 centímetros e segue o percurso em linha reta, em sentido contrário (2). O deslocamento
 de 20 centímetros é tal que haja uma sobreposição das áreas varridas pelas escovas
 em ambos os sentidos percorridos (3), de forma a compensar qualquer desvio de
-rota não detectado pelo giroscópio. O limpador retorna à parede inicial, desloca-se
+rota não detectado pelo giroscópio. O robô retorna à parede inicial, desloca-se
 outros 20 centímetros para a direita  e segue mais uma vez em sentido oposto. Este
 procedimento se repete até que o robô chegue à parede direita da piscina (4). Na
-eventualidade de o robô se encontrar, no meio do percurso,  com um obstáculo grande
-o bastante para ser detectado pelos sensores de distância, o limpador deverá desviar
+eventualidade do robô se encontrar, no meio do percurso,  com um obstáculo grande
+o bastante para ser detectado pelos sensores de distância, o robô deverá desviar
 do obstáculo e seguir sua rota original (5).
 
 \section{Modos de Operação}
@@ -83,11 +83,11 @@ A movimentação do robô limpador é definida por quatro modos de operação di
 referentes às quatro etapas de funcionamento: inicial, operação regular,
 resposta a obstáculo e final.
 \par
-Na etapa inicial, o limpador deve ser capaz de submergir ao fundo da piscina e
+Na etapa inicial, o robô deve ser capaz de submergir ao fundo da piscina e
 posicionar-se em um dos quatro vértices. Uma vez posicionado ele inicia o modo
 de operação regular e realiza o percurso de limpeza  explicado anteriormente.
 Terminado o percurso, o robô deve ser capaz de “emergir” à superfície para ser
-coletado pelo usuário. Caso o limpador se depare com um obstáculo de grande porte
+coletado pelo usuário. Caso o robô se depare com um obstáculo de grande porte
 em seu percurso, ele deve ser capaz de circundar o obstáculo e retornar ao modo de
 operação regular.
 
@@ -135,7 +135,7 @@ de controle devem seguir para circundar o obstáculo neste caso
 \subsection{Modo de Operação Inicial e Final}
 Antes de começar a varredura da piscina, o robô deve primeiro posicionar-se
 perfeitamente em um dos 4 cantos da piscina. O fluxograma a seguir detalha
-as etapas do processo a partir do momento em que o limpador chega ao fundo
+as etapas do processo a partir do momento em que o robô chega ao fundo
 da piscina.
 \par
 \begin{figure}[h]
@@ -147,7 +147,7 @@ da piscina.
 \FloatBarrier
 
 \section{O Corpo do Robô (Aeroespacial, Automotiva e Energia)}
-A figura \ref{fig:initial_croqui} mostra a primeira modelagem do\textit{Clean Pool Robot}. O modelo
+A figura \ref{fig:initial_croqui} mostra a primeira modelagem do \textit{Clean Pool Robot}. O modelo
 apresenta uma bomba de sucção (1), uma caixa com os filtros para as impurezas
 (2), dois motores para a rotação das escovas (3), uma saída superior da água
 filtrada (4), quatro rodas próprias para rolagem em ambientes aquáticos (5),
@@ -290,13 +290,13 @@ e detritos da água.
   \item Malha de Alumínio: A malha de alumínio é um material durável, altamente
   resistente a água, não precisa de manutenção e nem de troca. Em caso de avaria na
   grade a substituição é simples e barata. A grade será localizada na entrada
-  da caixa filtradora, no duto de acesso na base do robô, conforme a Figura \ref{fig:mesh-aluminium}.
+  da caixa filtradora, no duto de acesso na base do robô, conforme a Figura \ref{fig:eletric-motor}.
   \par
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/mesh-aluminium.png}
     \caption{Modelo de malha de alumínio utilizada como filtro secundário. \cite{dx2016}}
-    \label{fig:filter}
+    \label{fig:mesh-aluminium}
   \end{figure}
   \FloatBarrier
   \par
@@ -319,7 +319,7 @@ e detritos da água.
     \centering
     \includegraphics[width=0.2\textwidth]{figures/filter.png}
     \caption{Elemento Filtrante - Refil POE IBBL 10'' \textit{Big Blue}}
-    \label{fig:mesh-aluminium}
+    \label{fig:filter}
   \end{figure}
   \FloatBarrier
   \par
@@ -331,7 +331,7 @@ e detritos da água.
   modelos são comumente utilizados na filtragem de caixas d’águas, piscinas e banheiras.
 \end{itemize}
 \par
-O elemento filtrante na forma cilindrica, além de ser o mais encontrado
+O elemento filtrante na forma cilíndrica, além de ser o mais encontrado
 comercialmente, proporcionará ao CPR uma compactação dos dutos de filtragem e
 uma melhor organização interna para alocação de seus componentes. O modelo de
 filtro selecionado da Poly Flow e similares é o que mais se encaixa as
@@ -345,7 +345,7 @@ Figura \ref{fig:eletric-motor}.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/eletric-motor.png}
+  \includegraphics[width=0.7\textwidth]{figures/eletric-motor.png}
   \caption{Atuação do motor elétrico (\textsf{Autoria do Autor})}
   \label{fig:eletric-motor}
 \end{figure}
@@ -372,7 +372,7 @@ alteração de direção do robo, sendo que apenas efetuará giros de  90º.
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{figures/wheels.png}
+  \includegraphics[width=0.6\textwidth]{figures/wheels.png}
   \caption{Localização das rodas e rotação das rodas centrais (\textsf{Autoria do Autor})}
   \label{fig:wheels}
 \end{figure}
@@ -483,7 +483,7 @@ de cada um desses componentes.
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{figures/schema-interactive-eletro-soft.png}
-  \caption{Esquemático da Interação entgre Eletrônica e Software (\textsf{Autoria do Autor})}
+  \caption{Esquemático da Interação entre Eletrônica e Software (\textsf{Autoria do Autor})}
   \label{fig:schema-interactive-electro-soft}
 \end{figure}
 \FloatBarrier
@@ -518,7 +518,7 @@ de 700 MHz e memória RAM de 512 MB \cite{raspfoundation2014}.
 Elas servem para fazer a comunicação do processador com componentes externos,
 sensores e atuadores e outros tipos de componentes eletrônicos. Algumas dessas
 portas tem usos predefinidos pelo fabricante do \hardware como saídas de
-alimentação genérica, e terras, outras dos pinos são de uso genérico. A
+alimentação genérica, e terras, outros dos pinos são de uso genérico. A
 \textit{Raspberry pi} tem 40 pinos, aonde dessas 17 são para uso genérico.
 \par
 \begin{figure}[h]
@@ -576,7 +576,7 @@ Dois servos (Micro Servo 9g e SG90 TowerPro) serão utilizados para rotacionar
 as rodas (5), o principal motivo de escolher esse modelo é ele ter torque
 suficiente para mover as mesmas e ter baixo custo, E para mover a saída de água
 (4) da bomba foi escolhido um servo motor (SM-S4306R) com maior liberdade de
-rotação (360º) e uma maior torque.
+rotação (360º) e um maior torque.
 \begin{figure}[h]
   \centering
 	\includegraphics[height=5cm]{figures/servant-motor.png}
@@ -597,7 +597,7 @@ necessário, enviar uma resposta \cite{windows2016}. Para o projeto foi
 identificada a biblioteca \textsf{bcm2835.h}, desenvolvida por Mike McCauley,
 que fará interface entre o \hardware e o \middleware, de forma que essa API
 terá o papel do \textit{driver}. Segundo \citeonline{mccauley2015}, a
-\textsf{bcm835.h} fornece acesso à GPIO e demais funções da \textit{Broadcom}
+\textsf{bcm2835.h} fornece acesso à GPIO e demais funções da \textit{Broadcom}
 bcm2835, além de permitir acesso de leitura de sinais digitais, bem como de
 envio de sinais digitais, por meio da SPI ou I2C.
 \par
@@ -649,7 +649,7 @@ a disponibilização de serviços para ativação de motores, bomba, escovas e l
 \end{description}
 
 \subsection{Arquitetura de \textit{Software} e Programação}
-A figura abaixo mostra a abstração da arquitetura do sistema associado ao projeto.
+A Figura \ref{fig:schema-arch} mostra a abstração da arquitetura do sistema associado ao projeto.
 \par
 \begin{figure}[h]
   \centering
@@ -659,10 +659,10 @@ A figura abaixo mostra a abstração da arquitetura do sistema associado ao proj
 \end{figure}
 \FloatBarrier
 \par
-O sistema segue uma arquitetura em camadas. A partir do hardware os dados serão
+O sistema segue uma arquitetura em camadas. A partir do \hardware os dados serão
 capturados. O \textit{driver} fará a ponte de comunicação entre o \hardware
-e o \middleware, permitindo que os dados possam ser trabalhados pela aplicação de
-negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \middleware,
+e o \textit{middleware}, permitindo que os dados possam ser trabalhados pela aplicação de
+negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \textit{middleware},
 afim de tratar os dados recebidos e fornecer instruções ao robô. Uma visão
 ampliada da arquitetura está disponível na Figura \ref{fig:schema-layer-arch}.
 \par
@@ -679,7 +679,7 @@ do projeto, por diversos aspectos associados a ela:
 \begin{itemize}
   \item Linguagem multiparadigma: permite o uso de ferramentas relativas
   ou paradigma estruturado, orientado a objetos e programação genérica. Essa
-  característica, segundo \cite{stroustrup2012}, criador da linguagem, apresenta
+  característica, segundo \citeonline{stroustrup2012}, criador da linguagem, apresenta
   ao programador a possibilidade de utilizar as melhores características de
   cada forma de programação.
   
