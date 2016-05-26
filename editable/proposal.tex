@@ -9,9 +9,9 @@ Considerando o alto custo de aquisição de equipamentos modernos, internacionai
 \item Produzir um produto nacional que possui valor de mercado mais acessível.
 \end{itemize}
 
-Em uma pesquisa realizada pela equipe, verificou-se que a massa dos robôs que limpam piscinas variam de 8 Kg até 25 Kg e custam entre R\$ 2.000,00 e R\$ 16.000,00. O clean Pool Robot tem massa de aproximadamente 10kg e custará proximo de R\$ 7.000,00, nem o mais caro e nem o mais barato. Para a escolha de um limpador de piscinas automaitico pequenas diferenças de especificação devem ser consideradas no momento da aquisição do aparelho, como por exemplo, ciclo de limpeza e taxa de filtragem. O ciclo de limpeza determina o intervalo de tempo em que o robô trabalha antes de se desligar automaticamente e a taxa de filtragem é determinada pela quantidade de água filtrada em uma hora, que é expressa em litros por hora (LPH). No caso do CPR tem um ciclo de limpeza de 5h, tempo necessario para limpar uma piscina curta (semiolimpica).
+Em uma pesquisa realizada pela equipe, verificou-se que a massa dos robôs que limpam piscinas variam de 8 Kg até 25 Kg e custam entre R\$ 2.000,00 e R\$ 16.000,00. O \cpr tem massa de aproximadamente 10kg e custará em torno de R\$ 7.000,00, preço mediano entre os concorrentes. Para a escolha de um limpador de piscinas automático, pequenas diferenças de especificação devem ser consideradas no momento da aquisição do aparelho, como por exemplo, ciclo de limpeza e taxa de filtragem. O ciclo de limpeza determina o intervalo de tempo em que o robô trabalha antes de se desligar automaticamente e a taxa de filtragem é determinada pela quantidade de água filtrada em uma hora, que é expressa em litros por hora (LPH). No caso do CPR tem um ciclo de limpeza de 5h, tempo necessário para limpar uma piscina curta (semiolímpica).
 
-Este projeto lida basicamente com um corpo imerso em um líquido, deste modo o corpo estará essencialmente sob ação de duas forças: empuxo e peso.  Empuxo ocorre quando um corpo imerso na água parece ter se tornado mais leve devido a uma força, exercida pelo líquido sobre o corpo, vertical e para cima, que alivia o peso do corpo. Já o peso é devido à interação com o campo gravitacional da Terra.
+O \cpr estará lidando basicamente com um corpo imerso em um líquido. Deste modo, o corpo estará essencialmente sob ação de duas forças: empuxo e peso.  Empuxo ocorre quando um corpo imerso na água parece ter se tornado mais leve devido a uma força, exercida pelo líquido sobre o corpo, vertical e para cima, que alivia o peso do corpo. Já o peso é devido à interação com o campo gravitacional da Terra.
 
 Quando um corpo está totalmente imerso em um líquido, podemos ter as seguintes situações: 
 
@@ -24,16 +24,16 @@ Quando um corpo está totalmente imerso em um líquido, podemos ter as seguintes
 Como o robô realiza a limpeza do fundo da piscina, este deve estar afundado, ou seja, a intensidade da força de empuxo deverá ser menor do que a intensidade da força peso.
 
 \section{Objetivos do Projeto}
-Construir um robô capaz de realizar a remoção de sujeiras depositadas no fundo de piscinas por meio da aspiração e filtragem das impurezas. O objetivo específico deste relatório é apresentar:
+Construir um robô capaz de realizar a remoção de sujeiras depositadas no fundo de piscinas por meio da aspiração e filtragem das impurezas. Os objetivos específicos são:
 
 \begin{itemize}
-\item O projeto de solução, modelagem, cálculos matemáticos e; 
-\item As simulações; 
-\item A Prototipagem das partes do robô e da solução.
+\item Realizar aspiração automática dos resíduos decantados por meio da sucção e filtragem;
+\item Submergir de forma independente;
+\item Movimentar-se ao longo do fundo da piscina.
 \end{itemize}
 
 \section{Estrutura do Relatório}
-A organização do projeto foi dividido em dois grupos: o grupo de estrutura, design e o grupo de lógica. Ambos os grupos se relacionam e tem trabalhado em conjunto. O diagrama abaixo apresenta a interação entre os grupos e as diversas engenharias que os compõem.
+A organização do projeto foi dividido em dois grupos: o grupo de estrutura e o grupo de lógica. Ambos os grupos se relacionam e tem trabalhado em conjunto. O diagrama abaixo apresenta a interação entre os grupos e as diversas engenharias que os compõem.
 \par
   \begin{figure}[h]
     \centering
@@ -43,39 +43,39 @@ A organização do projeto foi dividido em dois grupos: o grupo de estrutura, de
   \end{figure}
   \FloatBarrier
 \par
-Apesar da divisão em duas grandes equipes, os membros interagiram de forma a preencher os requisitos e parâmetros solicitados por meio de documentos compartilhados via Google drive, ou por mensagens em grupos de conversa privados, utilizando-se do WhatsApp.
+Apesar da divisão em duas grandes equipes, os membros interagiram de forma a preencher os requisitos e parâmetros solicitados por meio de documentos compartilhados via Google drive, ou por mensagens em grupos de conversa privados, utilizando-se do \textsf{WhatsApp}.
 
-Nos próximos itens do relatório estão a Visão geral no nosso produto, onde apresentamos o seu design, os sistemas que o compõem, os indicadores e a estimativa de custo. Em seguida temos o dimensionamento de cada componente. Por fim temos a montagen do prototipo e os testes realizados no mesmo.
+Nos próximos itens do relatório estão a visão geral no nosso produto, onde apresenta-se o \textit{design}, os sistemas que o compõem, os indicadores e a estimativa de custo. Em seguida tem-se o dimensionamento de cada componente. Por fim, a montagem do protótipo e os testes realizados.
 
 \chapter{O \textit{Clean Pool Robot}}
 \section{Visão Geral}
-O Clean Pool Robot é equipamento que visa auxiliar a limpeza de grandes piscinas, como os modelos semi-olimpicos. O robô faz a aspiração e filtragem das impurezas presentes no fundo da piscina, removendo as algas e folhas e auxiliando na circulação da água. O mecanismo do mesmo será composto por dois métodos para que o fundo da piscina possa ser aspirado: o primeiro baseia-se na escovação do chão e o segundo a sucção das impurezas desprendidas do piso da piscina.
+O \cpr é um equipamento que visa auxiliar a limpeza de grandes piscinas, como os modelos semiolímpicos. O robô faz a aspiração e filtragem das impurezas presentes no fundo da piscina, removendo as algas e folhas e auxiliando na circulação da água. O mecanismo do mesmo será composto por dois métodos para que o fundo da piscina possa ser aspirado: o primeiro baseia-se na escovação do chão e o segundo a sucção das impurezas desprendidas do piso da piscina.
 
 O primeiro método tem foco nas escovas que estão situadas na parte inferior do robô. As escovas realizam movimentos giratórios fazendo com que suas cerdas entrem em contato com o chão retirando  impurezas, como por exemplo: algas e grãos de terra.
 
 Após a escovação, é realizado outro método, a sucção das impurezas desprendidas do piso da piscina  além de outras impurezas que estiverem próximas à área de atuação do robô, por exemplo: pequenos ramos e folhas. Por meio de uma bomba, a água é sugada por uma abertura situada na parte inferior e passa por um filtro. As impurezas menores ficam retidas no filtro. Por meio de um sistema de expulsão de água, esta sairá a uma velocidade muito superior à velocidade de entrada no início do processo, ajudando na movimentação do robô.
 
-Com o término da limpeza na piscina, haverá a necessidade dos filtros serem limpos para retirada das impurezas colhidas na aspiração da água. Assim, após cada utilização o usuário deverá limpar os filtros internos do robô Clean Pool.
+Com o término da limpeza na piscina, haverá a necessidade dos filtros serem limpos para retirada das impurezas colhidas na aspiração da água. Assim, após cada utilização o usuário deverá limpar os filtros internos do \cpr.
 
-O produto desenvolvido será responsável apenas pela retirada da sujeira decantada no fundo da piscina, ou seja, o Clean Pool Robot não limpará as paredes ou superfície da piscina. Além disso, as piscinas ideais para a operação do Robot são as retangulares, sem inclinações e azulejadas. É ideal também que o robô seja lançado na piscina no meio da largura maior, evitando que o fio fique totalmente esticado quando o robô estiver na quina oposta do lançamento.  
+O produto desenvolvido será responsável apenas pela retirada da sujeira decantada no fundo da piscina, ou seja, o \cpr não limpará as paredes ou superfície da piscina. Além disso, as piscinas ideais para a operação do robô são as retangulares, sem inclinações e azulejadas. É ideal também que o robô seja lançado na piscina no meio da largura maior, evitando que o fio fique totalmente esticado quando o robô estiver na quina oposta do lançamento.  
 
 \section{O \textit{Design}}
-A figura abaixo mostra o Clean Pool Robot projetado no software Catia. O modelo apresenta dois rolos de limpeza, localizados na parte frontal e traseira do robô, um duto, na parte superior para a saída da água filtrada e também funciona como propulsão e direcionador dos movimentos do robô. A sucção da água feita por meio das duas aberturas na parte inferior do robô. Abaixo a figura com croqui do design do Clean Pool Robot.
+A Figura \ref{fig:croqui-design-cpr} mostra o \cpr projetado no \software Catia. O modelo apresenta dois rolos de limpeza, localizados na parte frontal e traseira do robô, um duto, na parte superior para a saída da água filtrada, que também funciona como propulsão e direcionador dos movimentos do robô. A sucção da água feita por meio das duas aberturas na parte inferior do robô. Abaixo a figura com croqui do design do \textit{Clean Pool Robot}.
 \par
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/croqui-design-cpr.png}
-    \caption{Croqui com o design do Clean Pool Robot, vista frontal e inferior.}
+    \caption{Croqui com o design do \textit{Clean Pool Robot}, vista frontal e inferior.}
     \label{fig:croqui-design-cpr}
   \end{figure}
   \FloatBarrier
 \par
-Por motivo de resistência ao movimento o formato do robô foi modificado para melhor aproveitamento das forças hidrodinâmica envolvidas, as alterações no desenho inicial foram feitas com a intenção de diminuir a força de arrasto, a estrutura conta agora com cantos e arestas arredondadas conforme a Figura acima.
+Por motivo de resistência ao movimento o formato do robô foi modificado para melhor aproveitamento das forças hidrodinâmica envolvidas, as alterações no desenho inicial foram feitas com a intenção de diminuir a força de arrasto, a estrutura conta agora com cantos e arestas arredondadas conforme a Figura \ref{fig:croqui-design-cpr}.
 
-O design mostrado acima é a segunda versão onde foi melhorado o posicionamento das escovas, onde elas ficam na extremidade do robô onde auxiliar no impacto (por mais que seja pequeno) do robô com a parede em funcionamento.
+O \textit{design} apresentado é a segunda versão, em que foi melhorado o posicionamento das escovas. Nessa versão elas ficam na extremidade do robô, onde auxiliam em eventuais impactos (por mais que seja pequeno) do robô com a parede.
 
 \section{Sistemas}
-O Robô possui três principais sistemas para o seu funcionamento: o Sistema de Automação, composto pelos sensores e programações lógicas de acionamento, Sistema de Locomoção, formado pelo conjunto das rodas, bomba e motores, e o Sistema de Limpeza, com os filtros e rolos de limpeza. O esquema abaixo mostra os três sistemas e a relação entre eles.
+O Robô possui três principais sistemas para o seu funcionamento: o Sistema de Automação, composto pelos sensores e programações lógicas de acionamento, Sistema de Locomoção, formado pelo conjunto das rodas, bomba e motores, e o Sistema de Limpeza, com os filtros e rolos de limpeza. A Figura \ref{fig:main-system-project} mostra os três sistemas e a relação entre eles.
 \par
   \begin{figure}[h]
     \centering
@@ -87,16 +87,29 @@ O Robô possui três principais sistemas para o seu funcionamento: o Sistema de 
 \par
 
 \section{Indicadores}
-Como citado anteriormente o ciclo de limpeza é de 5h e possui uma taxa de filtragem de 2500 LPH (precisa colocar um texto explicando o pq desses indicadores).
+Os indicadores de desempenho são métricas que quantificam a performance de acordo com os objetivos propostos. Para auxiliar a validação da verificação da limpeza do robô, determinou-se um indicador que é o \textsf{CDL} - Ciclo de Limpeza.
+
+O \textsf{CDL} faz uma avaliação da limpeza em gruas de leve até uma limpeza minuciosa. O parâmetro para a avaliação do cliclo se faz em comparação com tempo, caso a duração total da limpeza seja menor que 5h, então o robô terá executado um \textsf{CDL} leve, ou seja, limpeza rápida e mais leve. Esse \textsf{CDL} é indicado para piscinas que estejam, por inspeção visual, com pouca sujeita depositada ao fundo.
+
+Caso o tempo total da limpeza seja maior que 5h, o \textsf{CDL} utilizado foi equivalente a uma limpeza minuciosa. Neste caso a piscina deve estar com maior quantidade de impurezas depositadas ao fundo. A Figura \ref{fig:indicator} mostra a represenatção do indicador.
+\par
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/indicator.png}
+    \caption{Indicador CDL.}
+    \label{fig:indicator}
+  \end{figure}
+  \FloatBarrier
+\par
 
 \section{Custos}
-No desenvolvimento do Clean Pool Robot foram gastos até o momento os valores apresentados na tabela abaixo. Considerando um lucro de 10\% sob cada peça, o custo estimado para a Venda do Robô é de R\$ 6.500, estando comercialmente competitivo.
+No desenvolvimento do \cpr foram gastos até o momento os valores apresentados na tabela abaixo. Considerando um lucro de 10\% sob cada peça, o custo estimado para a venda do Robô é de R\$ 6.500, estando comercialmente competitivo.
 \begin{table}[h]
 \centering
-\caption{My caption}
+\caption{Valores de Custos do \textit{Clean Pool Robot}}
 \label{my-label}
 \begin{tabular}{@{}cc@{}}
-Carga horaria máxima                      & 90 h         \\
+Carga horária máxima                      & 90 h         \\
 Valor da Hora (Valor da Capes – Graduado) & R\$ 24, 44   \\
 Pessoas no desenvolvimento do produto     & 12           \\
 Hora por mês                              & 20           \\
@@ -112,12 +125,12 @@ Uma pesquisa realizada apresentou o custo dos principais concorrentes do Clean P
 \chapter{Sistemas do Robô}
 \section{O Sistema de Locomoção}
 \subsection{Duto de Propulsão}
-A água que é ejetada do sistema de filtragem é devolvida para a piscina já filtrada, auxiliando assim a limpeza geral de todo o volume em que o robô esta submerso. A água filtrada é direcionada para uma saída que se localiza na parte superior do produto. O duto de saída será um bocal direcionável localizado na parte superior do robô responsável por sua locomoção. Esse bocal irá se mover nas 4 direções principais, isto é, nos ângulos de 0, 90, 180 e 270 graus, proporcionando ao robô a locomoção necessária para o cumprimento da rota de limpeza.
+A água que é ejetada do sistema de filtragem é devolvida para a piscina, auxiliando assim a limpeza geral de todo o volume em que o robô está submerso. A água filtrada é direcionada para uma saída que se localiza na parte superior do produto. O duto de saída será um bocal direcionável localizado na parte superior do robô responsável por sua locomoção. Esse bocal irá se mover nas 4 direções principais, isto é, nos ângulos de 0, 90, 180 e 270 graus, proporcionando ao robô a locomoção necessária para o cumprimento da rota de limpeza.
 
-O duto de propulsão terá diametro de 1” (25,4mm). Acoplado a ele está o propulsor auxiliar que permitirá a movimentação do robô com a velocidade desejada. O duto de propulsão foi construido de forma que a agua mude de direção sem que haja vazamentos e que o servo responsavel pela rotação não entre em contato com a água.
+O duto de propulsão terá diametro de 1” (25,4mm). Acoplado a ele está o propulsor auxiliar que permitirá a movimentação do robô com a velocidade desejada. O duto de propulsão foi construído de forma que a água mude de direção sem que haja vazamentos e que o servo responsável pela rotação não entre em contato com a água.
 
 \subsection{As Rodas}
-O aparelho contará com quatro rodas. Elas se assemelham as usadas em carrinhos de supermercado, com liberdade de 360 graus em relação ao eixo x e y.
+O aparelho contará com quatro rodas. Elas se assemelham as usadas em carrinhos de supermercado, com liberdade de 360 graus em relação ao eixo $x$ e $y$.
 \par
   \begin{figure}[h]
     \centering
@@ -127,7 +140,7 @@ O aparelho contará com quatro rodas. Elas se assemelham as usadas em carrinhos 
   \end{figure}
   \FloatBarrier
 \par
-As rodas serão fixadas na placa da base do robô e estarão localizadas nos cantos da base do robô e direcionarão o seu movimento de acordo com a direção do jato de água oriundo do bocal, conforme a figura abaixo:
+As rodas serão fixadas na placa da base do robô e estarão localizadas nos cantos da base do robô e direcionarão o seu movimento de acordo com a direção do jato de água oriundo do bocal, conforme a Figura \ref{fig:catia-base}.
 \par
   \begin{figure}[h]
     \centering
@@ -140,7 +153,7 @@ As rodas serão fixadas na placa da base do robô e estarão localizadas nos can
 
 \section{O Sistema de Limpeza}
 \subsection{Os Filtros}
-A filtragem irá garantir que a piscina estará limpa após o uso do Clean Pool Robot. O filtro será fundamental, pois ele será responsável pela remoção das partículas de sujeira que ficam decantadas no fundo da piscina. Primeiro a água será sugada para dentro do aparelho que passará por um depósito onde será feita a filtragem. Em seguida, a água filtrada retorna para piscina. Será realizado um sistema de dupla filtragem com dois tipos de elementos filtrantes: um de malha de alumínio, elemento secundário, para evitar que folhas e objetos de maior tamanho entrem no filtro principal que será responsável por filtrar o particulado e detritos da água.
+A filtragem irá garantir que a piscina estará limpa após o uso do \textit{Clean Pool Robot}. O filtro será fundamental, pois ele será responsável pela remoção das partículas de sujeira que ficam decantadas no fundo da piscina. Primeiro a água será sugada para dentro do aparelho que passará por um depósito onde será feita a filtragem. Em seguida, a água filtrada retorna para piscina. Será realizado um sistema de dupla filtragem com dois tipos de elementos filtrantes: um de malha de alumínio, elemento secundário, para evitar que folhas e objetos de maior tamanho entrem no filtro principal que será responsável por filtrar o particulado e detritos da água.
 
 Será usada uma malha de alumínio para a realização de uma pré-filtragem, a qual impedirá que folhas, plásticos, cabelos, e outros materiais maiores entupam o filtro principal responsável por retirar impurezas menores da água. Essa malha é o que chamou-se de filtro secundário. O filtro principal será um elemento filtrante na forma cilíndrica comumente utilizado na filtragem de caixas d’águas. As imagens dos filtros a serem utilizados e as especificações técnicas do elemento filtrante principal constam a seguir. Juntamente com o sistema de filtragem existe o que chamamos de “caixa de sujeira”, nela a pedras, folhas, galhos e outros objetos que poderam entupir ou diminuir a vazão de filtragem serão armazenadas. Essa caixa deverá ser limpa sempre que o robô for retrado da água.
 \begin{description}
@@ -307,7 +320,7 @@ O comprimento do cabo será explicado a seguir. Para o correto dimensionamento d
 \begin{displaymath}
   S = \frac{\sqrt{3} \times IL}{58 \times U}
 \end{displaymath}
-Para um fio trifásico de cobre a equação apresenta o cálculo para o seu dimensionamento. Na equação S é a bitola do fio, em mm2, I é a corrente que passa pelo condutor, em Ampères, L é o comprimento total da fonte de energia até a carga, em metros, U é a queda de tensão suportada pelo fio, em Volts, e 58 é uma constante devido ao material do fio, no caso Cobre. Para o robô de piscina deste projeto a tensão total consumida no robô é de 350W, assim a corrente que deverá ser suportada no fio é de 1,60 A. Assim, utilizando a equação acima temos que a bitola ideal para o fio será de 6,5 mm2, para o sistema ca.
+Para um fio trifásico de cobre a equação apresenta o cálculo para o seu dimensionamento. Na equação S é a bitola do fio, em mm2, I é a corrente que passa pelo condutor, em Ampères, L é o comprimento total da fonte de energia até a carga, em metros, U é a queda de tensão suportada pelo fio, em Volts, e 58 é uma constante devido ao material do fio, no caso Cobre. Para o robô de piscina deste projeto a potência total consumida no robô é de 240W, assim a corrente que deverá ser suportada no fio é de 1,60 A. Assim, utilizando a equação acima temos que a bitola ideal para o fio será de 6,5 mm2, para o sistema ca.
 
 A alimentação dos dois motores das escovas será feito com alimentação em cc, assim a figura abaixo apresenta modelo para cálculo da espessura do fio. Para o caso do robô, o fio de alimentação dos motores deverá suportar 1,5 mm2.
 \par
@@ -337,7 +350,7 @@ Com isso, quando um transistor está trabalhando na região linear como um contr
 
 Passando para parâmetros de eficiência, a fonte de alimentação com chaveamento apresenta uma relação de quase 95\% de qualidade em comparação as demais fontes de alimentação sem chaveamento, os quais ficam entorno de 65\%. Além da análise da relação de potência por peso, sendo às fontes convencionais capazes de fornecer 25W/kg e as fontes chaveadas capazes de oferecer 100W/kg [8].
 
-Com base nas informações apresentadas e na possível potência geral do sistema estar em torno de 240 Watts, serão utilizadas duas fontes de alimentação chaveada com os seguintes parâmetros elétricos : 110/220 Volts AC para 12 Volts e 10 Ampéres DC. Importante ressaltar que o sistema será alimentado por duas fontes independentes ao mesmo tempo, a fim de se evitar possíveis danos ao sistema eletrônico devido a corrente de partida dos motores de escovação e da bomba de propulsão.
+Com base nas informações apresentadas e na possível potência geral do sistema está em torno de 240 Watts, serão utilizadas duas fontes de alimentação chaveada com os seguintes parâmetros elétricos : 110/220 Volts AC para 12 Volts e 10 Ampéres DC. Importante ressaltar que o sistema será alimentado por duas fontes independentes ao mesmo tempo, a fim de se evitar possíveis danos ao sistema eletrônico devido a corrente de partida dos motores de escovação e da bomba de propulsão.
 \par
 \begin{figure}[h]
   \centering
@@ -423,833 +436,560 @@ Na seleção de uma unidade de processamento o maior fator de seleção foi cons
 \par
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/rpi2b.png}
+  \includegraphics[width=0.8\textwidth]{figures/schema-eletro-soft.png}
+  \caption{Interação dos componentes eletrônicos e o core software.}
+  \label{fig:schema-eletro-soft}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsubsection{Raspberry PI 2 B}
+Com o objetivo de desenvolver um robô é necessário ter uma central de processamento de dados. A Raspberry pi foi escolhida pela sua capacidade de processamento onde pode ser processado as variáveis que fazem o robô tomar decisões na sua rotina. A Raspberry aciona a passagem de energia em  relés que fazem o acionamento dos motores que giram as escovas, e do motor da bomba. Como a Raspberry não tem conversor A/D foi necesário usar um arduino para tratar o sensor de pressão. A comunicação da Raspberry com o Arduino é feito usando protocolo serial  UART (Universal Asynchronous Receiver/Transmitter). Também há a possibilidade do uso de várias linguagens de programação e APIs.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/rpi2b.jpg}
   \caption{Raspberry PI 2 B.}
   \label{fig:schema-eletro-soft}
 \end{figure}
 \FloatBarrier
 \par
-\subsubsection{Raspberry PI 2 B}
-Com o objetivo de desenvolver um robô é necessário ter uma central de processamento de dados. A Raspberry pi foi escolhida pela sua capacidade de processamento onde pode ser processado as variáveis que fazem o robô tomar decisões na sua rotina. A Raspberry aciona a passagem de energia em  relés que fazem o acionamento dos motores que giram as escovas, e do motor da bomba. Como a Raspberry não tem conversor A/D foi necesário usar um arduino para tratar o sensor de pressão. A comunicação da Raspberry com o Arduino é feito usando protocolo serial  UART (Universal Asynchronous Receiver/Transmitter). Também há a possibilidade do uso de várias linguagens de programação e APIs.
 
 \subsubsection{Arduino}
 O Arduino Uno foi escolhido a princípio para facilitar o tratamento do sensor de pressão MPX-4250, que possui saída analógica. Trabalhar com   conversão A/D na raspberry pi requer o uso demasiado de pinos ( no mínimo 9 pinos para controlar dois sensores, utilizando-se de multiplexadores. ).  Uma vez que o Arduino Uno foi incluido no sistema, delegou-se  a ele também o trabalho de controlar os sensores de distancia HC-SR04, visto  que  estes são modulos desenvolvidos para funcionar no arduino.
-    \subsection{O Sistema de Controle de Tensão}
-      \subsubsection{Os Requisistos/Dimensionamento}
-      \subsubsection{GPIO - \textit{Generic Ports Input/Output}}
-      \subsubsection{\textit{Driver} GPIO}
-    \subsection{O Sistema de Sensoriamento}
-      \subsubsection{Os Requisitos/Dimensionamento}
-      \subsubsection{Os Sensores}
-    \subsection{O Sistema de Rotação do Robô}
-      \subsubsection{Os Requisitos/Dimensionamento}
-      \subsubsection{Servo Motor}
-    \subsection{Circuito Desenvolvido}
-      \subsubsection{Diagrama do Circuito}
-      \subsubsection{Pinagem}
-    \subsection{Programação e Arquitetura de Software}
-      \subsubsection{\textit{Middleware}}
-      \subsubsection{Camada de Serviços}
-        \subsubsubsection{Os Requisitos}
-        \subsubsubsection{Serviço de Comunicação (I/O)}
-        \subsubsubsection{Serviço de Concorrência}
-      \subsubsection{Camada de Aplicação}
-  
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/arduino.png}
+  \caption{Arduino.}
+  \label{fig:arduino}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsection{O Sistema de Controle de Tensão}
+\subsubsection{Os Requisistos/Dimensionamento}
+Para acionar os sistemas de alta tensão (Motores e Bomba) com circuitos de baixa tensão (Raspberry) foram utilizados relés. Com baixas tensões ele induz um campo eletromagnético sobre uma bobina, o que faz com que o relé deixe passar a tensão que está normalmente fechado, caso não haja essa alimentação o relé mantém-se emaberto, efetivamente funcionando como um interruptor.  Como é desejado que em um dos estados o circuito acione o motor e no outro o motor não funcione, foi projetado o circuito electrônico para só acionar o motor em normalmente fechado, em normalmente aberto o motor está em circuito aberto não sendo acionado.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/rele.png}
+  \caption{Rele de dois modulos modelo SRD-05VDC-SL-C.}
+  \label{fig:rele}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsubsection{GPIO - \textit{Generic Ports Input/Output}}
+Generic Ports Input Output são saídas e entradas de tensão. Elas servem para fazer a comunicação do processador com componentes externos, sensores e atuadores e outros tipos de componentes eletrônicos. Algumas dessas portas tem usos predefinidos pelo fabricante do Hardware como saídas de alimentação genérica, e terras, outras dos pinos são de uso genérico. A Raspberry Pi tem 40 GPIO, das quais  17 são para uso genérico.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/gpio.png}
+  \caption{GPIO Raspberry 1.}
+  \label{fig:gpio}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsubsection{\textit{Driver} GPIO}
+O driver GPIO é um software que habilita a comunicação entre o hardware e o software. A partir do driver é possível receber  os dados advindos dos componentes de hardware, fazer o devido tratamento e, se necessário, enviar uma resposta ao hardware (WINDOWS). Para o projeto foram identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza o Raspberry. Essas bibliotecas fazem a interface entre o hardware e o middleware, de forma que essas APIs fazem o papel do driver.
+
+\subsection{O Sistema de Sensoriamento}
+\subsubsection{Os Requisitos/Dimensionamento}
+Para garantir que o robô seja capaz de seguir o percurso definido é necessário que ele seja capaz de detectar as quatro paredes conforme se aproxima de alguma delas. Para tanto, quatro sensores de distância devem ser posicionados em cada uma das laterais do robô. Em caso de colisão com algum obstáculo não detectado pelos sensores de distância e a fim de manter constante o movimento em linha reta do robô, um acelerômetro/giroscópio deve ser utilizado no sistema. Por fim, tanto a pressão interna da caixa de filtragem quanto a externa do robô devem ser medidas constantemente. Caso haja o bloqueio da sucção da bomba por algum detrito haverá também uma variação da pressão interna, que pode ser detectada pelo sensor de pressão e permitir uma resposta imediata do sistema. Para garantir que o robô encontra-se de fato no fundo da piscina conforme ele segue seu percurso, a pressão externa do robô deve ser medida também.
+
+\subsubsection{Os Sensores}
+\begin{description}
+\item[Sensores de Distância:] serão utilizados sensores de distância com o intuito de permitir ao robô a identificação do espaço entre o robô e qualquer objeto à sua frente. Isso é importante para evitar colisões com as paredes da piscina e obstáculos a alturas que o sensor possa detectar. O sensor de distância ultrasônico HC-SR04 foi escolhido  por ser um módulo periférico próprio do arduino, facilitando assim sua implementação. Testes do sensor de baixo d'água ainda precisam ser realizados para validar a escolha.
+\item[Sensor de Pressão:] O sensor de pressão proposto funciona com o princípios de materiais piezoelétricos, um liquido entra dentro da câmara e proporciona uma pressão nas paredes da câmara, esse pressão gera uma diferença de potencial no material. Com essa diferença de potencial é possível, usando um conversor AD (Analógico/Digital), saber a pressão dentro da câmara. Esse sensor sera utilizado para medir a pressão dentro da câmara a onde se encontra a bomba de sucção, assim permitindo que a bomba só trabalhe dentro da pressão ideal de funcionamento, caso algo entupa a entrada da sucção esse sensor detectará  uma queda na pressão interna e por software o problema sera tratado.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/pressure-sensor.png}
+  \caption{Sensor de Pressão}
+  \label{fig:a}
+\end{figure}
+\FloatBarrier
+\par
+\item[Acelerômetro:] Está sendo cogitado usar um acelerômetro para auxiliar o deslocamento em linha reta do robô e detectar choques com obstáculos grandes, quando ocorre um choque com um obstaculo grande não detectado pelo sensor de distancia a uma variação brusca na aceleração, com isso podemos tratar o obstaculo ou abortar o funcionamento do robô.No mesmo modulo se encontra um giroscópio, ele mede rotações no robô, caso seja identificado alguma rotação não pretendida pelo sistema podemos usar esse dado para corrigir a trajetória do mesmo. O componente eletrônico que tem os dois sensores se comunica através do protocolo I2C. Isso reduz o numero de pinos necessários pare ler os dados do sensor.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/accelerometer.png}
+  \caption{Acelerômetro}
+  \label{fig:gpi}
+\end{figure}
+\FloatBarrier
+\par
+\end{description}
+
+\subsection{O Sistema de Rotação do Robô}
+\subsubsection{Os Requisitos/Dimensionamento}
+Foi definido pelo projeto que a propulsão do robô será gerada pela bomba de filtragem. Neste contexto e considerando que o robô move-se idealmente apenas em quatro direcões, existiam duas opções de controle da saída de água da bomba para o controle do direcionamento. A primeira, mais simples, consistia em dispor quatro canos de saída no topo do robô e, por meio de válvulas, controlar quais das saídas seriam abertas de cada vez. A segunda, mais elaborada, consiste em dispor um único cano capaz de rotacionar em 360 graus para se posicionar na direção desejada conforme o robô segue seu percurso. Foi decidido que a segunda opção seria a melhor alternativa, pois ela permite, juntamente com o acelerômetro/giroscópio, corrigir em tempo real qualquer desvio significativo da rota que o robô possa vir a sofrer.
+
+	Conforme o robô segue seu percurso, as rodas devem ser capazes de se manter em duas posicões: horizontal e vertical. Para tanto, um sistema de servos com rotação de 180 graus foi escolhido, similar ao esquema de propulsão.
+
+\subsubsection{Servo Motor}
+Servos motores são utilizados para rotacionar um eixo até uma posição desejada. Esses motores são normalmente motores de alto torque. Dois servos (Micro Servo 9g SG90 TowerPro) serão utilizados para rotacionar as rodas (5), o principal motivo de escolher esse modelo é ele ter torque suficiente para mover as mesmas e ter baixo custo, E para mover a saída de água (4) da bomba foi escolhido um servo motor (SM-S4306R) com maior liberdade de rotação (360º) e uma maior torque.
+\begin{figure}[h]
+  \centering
+	\includegraphics[height=5cm]{figures/servant-motor.png}
+	\quad
+	\includegraphics[height=5cm]{figures/micro-motor.png}
+  \caption{Servo Motores \cite{flipflop2013} e \cite{flipflop2016}, respectivamente}
+\end{figure}
+\FloatBarrier
+
+\subsection{Circuito Desenvolvido}
+\subsubsection{Diagrama do Circuito}
+A figura abaixo mostra o diagrama do circuito proposto:
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/circuit.png}
+  \caption{Circuito proposto.}
+  \label{fig:circuit}
+\end{figure}
+\FloatBarrier
+\par
+
+Para a alimentação da raspberry Pi 2 e do Arduino Uno, bem como todos os componentes alimentados em 5V (servo motores, sensores de distância, sensores de pressão), a partir dos 12V oferecidos pela fonte, utilizaram-se reguladores de tensão 7805. Capacitores de 0.33 e 0.1uF foram colocados em paralelo aos reguladores de tensão como medida de segurança.
+
+Conectados a raspberry Pi 2 estão os servo motores SG90 e e S4306, pelos pinos 16 e 11 respectivamente. Para o controle dos motores das escovas e da bomba, utilizaram-se relés para fazer o chaveamento com a tensão de 12V da fonte. O acelerômetro/giroscópio MPU\_6050 é conectado a Pi via Barramento Serial I2C , para conectar periféricos de baixa velocidade a um sistema embarcado.
+
+A raspberry Pi 2 e o Arduino Uno são conectados por porta serial TX e RX e se comunicam via UART (Universal Asynchronous Receiver/Transmitter). Um divisor de tensão é usado para conectar o pino TX0 de 5V do Arduino ao pino RXD de 3.3V da Raspberry Pi2.
+
+No Arduino estão conectados os quatro sensores de distância SR04 em portas digitais e os dois sensores de pressão MPX4250 nas portas analógicas A0 e A1.
+
+Até o momento da produção deste relatório, todos os componentes do circuito acima foram testados individualmente, a excessão do acelerômetro e dos relés (ainda a serem obtidos). A montagem do circuito completo em PCB ou placa universal ainda não foi iniciada.
+
+\subsubsection{Pinagem}
+A Figura abaixo mostra a pinagem de cada componente eletrônico do circuito.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/pinout.png}
+  \caption{Pinagem usada.}
+  \label{fig:pinout}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsection{Programação e Arquitetura de Software}
+A linguagem de programação selecionada inicialmente foi C++ e a biblioteca BCM2835.h para servir como driver de comunicação entre o software e o hardware. No entanto, houve a incompatibilidade entre essa biblioteca e a Raspberry pi 2. A documentação dessa biblioteca (McCauley) diz que ela foi desenhada para funcionar na versão 1 da Raspberry, mas era compatível com a versão 2, desde que tomadas algumas providências de configuração. Após ter-se feito todo o necessário ainda não estava funcionando corretamente, de forma que a equipe tomou a decisão de mudar de linguagem para Python 2.7, que também possui uma biblioteca de comunicação com a GPIO.
+
+A escolha pela BCM2835.h e C++ foram escolhas em que já se sabia dos riscos e que já foram contornados. Tomada a decisão todo o trabalho já foi convertido para a nova linguagem e vem se mostrando funcional.
+
+A figura abaixo mostra a abstração da arquitetura do sistema associado ao projeto.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/schema-arch.jpg}
+  \caption{Visão geral da arquitetura de software.}
+  \label{fig:schema-arch}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsubsection{\textit{Middleware}}
+Middleware é um software que conecta outros componentes de software. Uma camada de infraestrutura que viabiliza o desenvolvimento de aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados pela aplicação de negócio (ORACLE). O middleware fornecerá serviços base para o robô, como ativação dos motores, escova e uso dos sensores.
+
+\subsubsection{Camada de Serviços}
+\subsubsubsection{Os Requisitos}
+Por meio de reuniões com a equipe de Estruturas a equipe de Lógica identificou algumas ações que o robô precisaria fazer:
+\begin{itemize}
+\item Identificação de profundidade na piscina.
+\item Constante análise da distância entre o robô e obstâculos.
+\item Acionamento dos diversos sistemas do robô, como locomoção e filtragem.
+\item Comunicação entre os dois componentes do sistema de processamento de dados.
+\end{itemize}
+
+A partir desse levantamento e considerando como comumente é definida arquitetura para softwares em sistemas embarcados, percebeu-se a necessidade de dois serviços: um serviço para comunicação (entrada/saída de dados) e um para lidar com concorrência de requisições. Assim, a Figura abaixo detalha melhor a comunicação entre as camadas propostas da arquitetura, considerando-se os serviços a serem utilizados e as funcionalidades na camada da aplicação.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/layers-soft.png}
+  \caption{Visão detalhada das camadas de software.}
+  \label{fig:layer-soft}
+\end{figure}
+\FloatBarrier
+\par
+
+\subsubsubsection{Serviço de Comunicação (I/O)}
+Esse serviço tem por propósito fazer a ponte de comunicação entre o driver e a aplicação. Dessa forma, a camada de serviço, por meio do serviço de I/O, deixa invisível para a camada de aplicação como se dá o processo de comunicação com as camadas mais baixas. Isso permite melhor entendimento do código, bem como a possibilidade de refatoração mais simples, na medida em que há um desacoplamento entre as duas partes, comunicação e aplicação. Assim, uma alteração na camada de serviço não terá impacto na camada superior, de serviço, pois a interface entre as duas se manterá. As mudanças internas à camada não interferem no funcionamento de outra.
+
+Abaixo segue a listagem do código até o momento do serviço de comunicação.
+\begin{lstlisting}[language=Python, label=services, caption=Código da Camada de Serviços]
+import pinout as pin
+import time
+import serial
+import RPi.GPIO as GPIO
+import time 
+#Configura a serial e a velocidade de transmissao
+#pmw=GPIO.PWM(pinout.SERVO_WHEELS,50)
+#pmw.start(5)
+
+mw_dute = GPIO.PWM(pin.SERVO_PUMP,50)
+pmw_dute.start(5) 
+def start_arduino():
+    arduino_communication = serial.Serial("/dev/ttyAMA0", 115200)
+    return arduino_communication
+
+def read_arduino(arduino_communication):
+    response = arduino_communication.readline()
+    return response     
+
+def write_arduino(arduino_communication, line):
+    arduino_communication.write(line)
+    return
+
+def activate_pump():
+   GPIO.output(pin.WATER_PUMP, GPIO.HIGH)
+    return True
+
+def deactive_pump():
+    GPIO.output(pin.WATER_PUMP, GPIO.LOW)
+    return False
+
+def activate_brush():
+    GPIO.output(pin.BRUSH, GPIO.HIGH)
+    return True
+
+def deactive_brush():
+    GPIO.output(pin.BRUSH, GPIO.LOW)
+    return False
+
+def turn_servos_wheels(angle):
+    duty = float(angle)/20 + 2.5
+    pmw.ChangeDutyCycle(duty)      
+    return
+
+def turn_servo_pump(angle, direction):
+    time_s = angle/270
+    if (direction == 1):
+        pmw_dute.ChangeDutyCycle(50)
+        time.sleep(time_s)  
+    else:
+        pmw_dute.ChangeDutyCycle(2.5)   
+        time.sleep(time_s)
+
+    pmw_dute.ChangeDutyCycle(100) 
+    return
+\end{lstlisting}
+
+\subsubsubsection{Serviço de Concorrência}
+O serviço de concorrência tem por objetivo abstrair da aplicação questões relacionadas a tarefas que fazem uso do processamento ou de um canal ao mesmo tempo. Isso será comum nas tarefas relativas aos sensores, que devem estar aptos a exercerem suas funções o máximo de tempo possível. Assim, o serviço de concorrência fica responsável por permitir que eles atuem nesses termos, sem que um interfira nas atividades do outro.
+
+\subsubsection{Camada de Aplicação}
+A camada de aplicação da arquitetura fica responsável pelas ações mais alto nível, como locomoção e tomada de decisões. Ela solicita informações para a camada abaixo, a de serviços, e com esses dados faz o tratamento.
+
+Foi escolhida a ação de percorrer o percurso para se trabalhar inicialmente, pois é a que traz mais valor de negócio ao cliente. O robô, após estar na posição inicial numa das quinas da piscina, inicia a sua caminhada até encontrar a próxima parede. Em seguida ele desloca-se para a direita aproximadamente 20 centímetros para então movimentar-se dando “ré”. Ao alcançar a parede faz o deslocamento novamente para a direita de 20 centímetros e repete o processo até encontrar a quina final.
+
+Para essa tarefa o código faz uso dos serviços citados anteriormente e de um conjunto de tomadas de decisões baseadas nos dados recebidos dos serviços. Para demonstrar esse processo foi feito um diagrama de fluxo de dados, apresentado abaixo:
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/move-dfd.png}
+  \caption{Diagrama de Fluxo de Dados para a Locomoção.}
+  \label{fig:move-dfd}
+\end{figure}
+\FloatBarrier
+\par
+O código fonte é listado abaixo:
+
+\begin{lstlisting}[language=Python, label=services, caption=Código da Camada de Aplicação]
+import time
+import communication as SERVICE
+
+
+FOREVER = True
+FRONT = 0
+RIGHT = 90
+BACK = 180
+SIDEWAY = 90
+VERTICAL = 0
+
+
+def find_corner():
+    # TODO: Think about the logic of how the CleanPoolRobot will find the
+    #       corner of the pool.
+    #
+    return
+
+
+def activate_water_pump():
+    SERVICE.activate_pump()
+    return
+
+
+def deactivate_water_pump():
+    SERVICE.deactive_pump()
+    return
+
+
+def turn_pipe(angle):
+    return
+
+
+def turn_wheels(angle):
+    return
+
+
+def read_front_distance_sensor():
+    return 0
+
+
+def read_back_distance_sensor():
+    return 0
+
+
+def read_right_distance_sensor():
+    return 0
+
+
+def read_left_distance_sensor():
+    return 0
+
+
+def deactivate_brush():
+    return 0
+
+
+def move_front():
+    deactivate_water_pump()
+    turn_pipe(FRONT)  # degree
+    turn_wheels(VERTICAL)  # degree
+
+    activate_water_pump()
+
+    while FOREVER:
+        distance = read_front_distance_sensor()  # cm
+
+        if distance <= 5:
+            deactivate_water_pump()
+            deactivate_brush()
+            break
+
+    return
+
+
+def move_right():
+    five_seconds = 5
+
+    deactivate_water_pump()
+    turn_pipe(RIGHT)
+    turn_wheels(SIDEWAY)
+
+    activate_water_pump()
+    time.sleep(five_seconds)  # second
+
+    deactivate_water_pump
+
+    return
+
+
+def move_back():
+    five_centimeters = 5
+
+    deactivate_water_pump()
+    turn_pipe(BACK)
+    turn_wheels(VERTICAL)
+
+    activate_water_pump()
+
+    while FOREVER:
+        distance = read_back_distance_sensor()  # cm
+
+        if distance <= five_centimeters:
+            deactivate_water_pump()
+            deactivate_brush()
+            break
+
+    return
+
+
+def state_machine(state):
+    front = 1
+    right = 2
+    back = 3
+
+    if state == front:
+        move_front()
+
+        previous_state = state
+        state = right
+    elif state == right:
+        move_right()
+
+        if previous_state == front:
+            state = back
+        else:
+            state = front
+
+    elif state == back:
+        move_back()
+
+        previous_state = state
+        state = right
+
+    return state
+
+
+def route_course():
+    activate_water_pump()
+
+    state = 1
+
+    while FOREVER:
+        front_sensor = read_front_distance_sensor()
+        back_sensor = read_back_distance_sensor()
+        right_sensor = read_right_distance_sensor()
+        left_sensor = read_left_distance_sensor()
+
+        if (front_sensor > 5 and right_sensor > 5) or\
+           (back_sensor > 5 and left_sensor > 5):
+            break
+
+        state = state_machine(state)
+
+    return
+
+
+def finish():
+    # TODO: Think about the logic of how the CleanPoolRobot will turn back
+    #       when it finish clean the pool.
+    #
+    return
+
+
+def main():
+    find_corner()
+    route_course()
+    finish()
+
+    return
+
+main()
+\end{lstlisting}
+
 \chapter{Montagem do Robô}
-  \section{Modelagem da Base do Robô}
-  \section{Construção dos Rolos de Limpeza}
+\section{Modelagem da Base do Robô}
+Foi adquirida uma placa de aço de dimensões 500 mm de largura 900 mm de comprimento e 1,6 mm de espessura. Para se adequar ao projeto a placa foi reduzida para a seguinte dimensão 520 x 270 mm2 com a utilização de uma serra  tico-tico.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/placa.png}
+  \caption{Placa de aço adquirida.}
+  \label{fig:placa}
+\end{figure}
+\FloatBarrier
+\par
+
+A serra “tico” e máquina esmerilhadeira foram usadas posteriormente para a realização dos cortes definidos para o contorno da placa e para realizar os dois furos referente as duas entradas de água, conforme as figuras. 
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/workers.png}
+  \caption{Membros do grupo finalizando a modelagem da placa com a esmerilhadeira.}
+  \label{fig:workers}
+\end{figure}
+\FloatBarrier
+\par
+
+Após as modificações a placa adquiriu as mesmas dimensões do sketch pré definido.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/sketch-base.png}
+  \caption{Sketch da base do robô.}
+  \label{fig:sketch-base}
+\end{figure}
+\FloatBarrier
+\par
+
+\section{Construção dos Rolos de Limpeza}
+Pela dificuldade de se encontrar as escovas, que irão realizar uma das partes da limpeza no processo do Clean Pool Robot, a equipe optou por utilizar uma feita pelos integrantes da equipe.
+
+Foi utilizado um tubo cilíndrico de 300x50mm de PVC como base da estrutura dos rolos, e as “cerdas” das escovas foi  utilizado um polimero de fibra de vinil. Esse polimero foi cortado de maneira que seu comprimento fosse o mesmo comprimento da circuferência do tubo de PVC, afim de não existir nenhuma saliência que pudesse prejudicar a limpeza ou movimento do robô.
+	
+Para a fixação desse polímero no tubo foi utilizado um adesivo de contato tradicional da marca Cascola para se fazer a união desses dois materiais, depois disso o conjunto polímero e tubo, foi amarrado para que o adesivo estivesse seco e fosse bem aderido para que no momento de uso do robô o polímero não se desprendesse e por consequência não realizasse a escovação. O processo de produção pode ser acompanhado na Figura.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/rolo.png}
+  \caption{Processo de fabricação dos rolos de limpeza.}
+  \label{fig:rolo}
+\end{figure}
+\FloatBarrier
+\par
+
+Foram confeccionadas duas escovas as quais resultaram na seguinte figura.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/rolo-fim.png}
+  \caption{Rolos de limpeza finalizadas.}
+  \label{fig:rolo-fim}
+\end{figure}
+\FloatBarrier
+\par
+
+\section{instalação das Rodas}
+Para realizar a instalação das quatro rodas, foi utilizado uma furadeira de bancada onde foram realizados furos para fixação das rodas. Foi utilizado uma broca número 5 e realizado o furo na placa de aço.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/furadeira.png}
+  \caption{Furadeira de bancada utilizada na fixação das rodinhas.}
+  \label{fig:furadeira}
+\end{figure}
+\FloatBarrier
+\par
+
+Posteriormente foram fixadas as rodas na placa com parafusos e porcas.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/rodinhas.png}
+  \caption{Rodinhas finalizadas na base.}
+  \label{fig:rodinhas}
+\end{figure}
+\FloatBarrier
+\par
 
 \chapter{Testes do \textit{Clean Pool Robot}}
-  \section{Teste de Vedação - Persilox}
-  \section{Testes do Protótipo}
-  
+\section{Teste de Vedação - Persilox}
+O teste do Persilox® teve por objetivo testar a eficácia do produto de vedação escolhido. Para tanto foi feito com o uso de um cabo, recipiente cilíndrico de plástico, balde com água e papel toalha.
+
+No recipiente de plástico foi feito um furo, na sua lateral, do diâmetro do fio. Foi colocado o fio no furo e a vedado com o Persilox®. Após 10 minutos, a cola já estava seca, então colocou-se o papel toalha dentro do recipiente de plástico e mergulhou o mesmo no balde com água até que o fluido cobrisse a entrada do fio. Após um período retirou-se o recipiente da água e verificou-se que o papel toalha inserido no mesmo estava seco, além de visivelmente não haver a presença de umidade no interior do recipiente.
+
+\section{Testes do Protótipo}
+O teste do protótipo teve como objetivo a validação do  sistema de locomoção, composto pela união da base do robô com as rodas, a bomba e a fonte de tensão externa. O teste realizado pode ser dividido em duas partes: na parte I, o objetivo específico foi validar o sistema de vedação da alimentação Fonte-Bomba dentro d’água, e a  parte II o objetivo específico foi verificar se o conjunto conseguia se locomover dentro d’água somente com o jato da propulsão da bomba.
+
+\subsection{Parte I : sistema de vedação da alimentação Fonte-Bomba}
+Para a Parte I os fios de saida de alimentação da fonte, 12 V e entrada da bomba foram conectados com uma tomada macho e femêa, o que possibilitou a união de ambos. Esse ponto de união da Fonte-Bomba dista da posição da bomba, aproximadamente, um metro o que implica em imersão da conexão em água. A metodologia consistiu em realizar dois furos no recipiente, um em cada extremidade, passar a fiação e em seguida instalar as partes da tomada (macho e femêa), ao fechar os conectores o conjunto foi vedado com o Persilox® e em seguida, coberto com fita isolante. O conjunto foi colocado na piscina e, por constatação visual, observou-se que o conjunto ainda apresentava alguns pontos não vedados, pois começou a entrar agua no recipiente. Como solução ao impasse, o recipiente e conector serão alterado para a melhor segurança da parte elétrica. A Figura abaixo apresenta o item testado.
+
+\subsection{Parte II : sistema de Locomoção}
+A Parte II do teste consistiu em anexar a bomba de sucção juntamente a base da estrutura a fim de se avaliar a movimentação do robô através da propulsão dentro da piscina. Admitindo uma coluna d’água de aproximadamente 1.65 metros, com o teste de movimentação era esperado de acordo com os cálculos uma velocidade de deslocamento de entorno 15 cm/s, admitindo uma vazão nominal sem perdas gerado pela bomba de sucção e o peso total do sistema (conjunto base-bomba) cerca de 4 Kg. .	Após o teste foi possível avaliar que o teste de movimentação através da propulsão apresentou uma velocidade de aproximadamente 15 cm/s. Seguido deste, foi definido realizar novamente o teste, com intuito de avaliar a movimentação com uma carga adicional de 5 Kg, a fim de analisar a possível carga completa do robô.
+
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/test.png}
+  \caption{Teste de movimentação Robô.}
+  \label{fig:test}
+\end{figure}
+\FloatBarrier
+\par
+
 \chapter{Resultados Parciais}
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%O \textit{Clean Pool Robot} é um robô de aspiração de fundos de piscinas. O
-%mecanismo do mesmo será composto por dois métodos para que o fundo da piscina
-%possa ser aspirado: o primeiro baseia-se na escovação do chão e o segundo a
-%sucção das impurezas desprendidas do piso da piscina.
-%\par
-%O primeiro método tem foco nas escovas que estão situadas na parte inferior
-%do robô. As escovas realizam movimentos giratórios fazendo com que suas cerdas
-%entrem em contato com o chão retirando  impurezas, como por exemplo: algas e
-%grãos de terra.
-%\par
-%Após a escovação, é realizado outro método, a sucção das impurezas desprendidas
-%do piso da piscina  além de outras impurezas que estiverem próximas à área de
-%atuação do robô, por exemplo: pequenos ramos e folhas. Por meio de uma bomba, a
-%água é sugada por uma abertura situada na parte inferior e passa por um saco onde
-%as partículas de maiores dimensões ficam depositadas. Depois de passar pelo saco,
-%a água passa por um filtro removível. As impurezas menores ficam retidas no filtro.
-%Por meio de um sistema de expulsão de água, esta sairá a uma velocidade muito superior
-%à velocidade de entrada no início do processo, ajudando também na movimentação do robô.
-%\par
-%Com o término da limpeza na piscina, haverá a necessidade dos filtros serem limpos
-%para retirada das impurezas colhidas na aspiração da água. Assim, após cada utilização
-%o usuário deverá limpar os filtros internos do \textit{Clean Pool Robot}.
-%\par
-%O produto desenvolvido será responsável apenas pela retirada da sujeira decantada
-%no fundo da piscina, ou seja, o \textit{Clean Pool Robot} não limpará as paredes
-%ou superfície da piscina. Além disso, as piscinas ideais para a operação do robô
-%são as retangulares, sem inclinações e azulejadas. É ideal também que o robô seja
-%lançado na piscina no meio da largura maior, evitando que o fio fique totalmente
-%esticado quando o robô estiver na quina oposta do lançamento.
-%\par
-%Como diferencial, o \textit{Clean Pool Robot} será um produto nacional com custo
-%mais acessível e que possui percurso não aleatório.
-%\par
-%O \textit{Clean Pool Robot} pode ser dividido em duas grandes partes, uma compondo a
-%estrutura (apelidada de corpo) e o outro a parte lógica (apelidada de mente) do
-%robô. Cada uma dessas será explicada posteriormente.
-%
-%\section{Percurso do Robô}
-%O esquemático abaixo mostra uma ideia inicial de como o robô percorrerá a piscina
-%a ser limpada.
-%\par
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[width=\textwidth]{figures/schema-way-robot.jpg}
-%    \caption{Demonstrativo do percurso de limpeza do robô (\textsf{Autoria do Autor})}
-%    \label{fig:schema-way-robot}
-%  \end{figure}
-%\par
-%O robô limpador foi projetado para ser capaz de percorrer toda a área da superfície
-%inferior de piscinas retangulares e sem inclinação. A varredura é feita de forma
-%totalmente autônoma pelo sistema, com a \textit{Raspberry pi} como unidade central de
-%controle de todos elementos periféricos: sensores de distância, servo motores,
-%sensores de pressão, etc. É necessário o usuário apenas posicionar o robô em
-%uma das bordas da piscina e recolhê-lo quando o processo de limpeza estiver completo.
-%\par
-%Com o intuito de simplificar o sistema, optou-se por permitir ao robô mover-se apenas
-%em duas direções, horizontal e vertical, em ambos os sentidos. Desta forma,
-%baseando-se em projetos similares como o descrito na patente \textit{POOL CLEANER
-%DIRECTIONAL CONTROL METHOD AND APPARATUS} \cite{porat2001}, o
-%padrão ideal de varredura consiste em uma sequência de travessias longitudinais
-%paralelas, partindo de uma borda da piscina à outra, como pode ser visto na Figura
-%\ref{fig:schema-way-robot}.
-%\par
-%O robô inicia o processo de varredura assim que os sensores de distância,
-%localizados em cada uma das laterais do robô, detectam que ele se encontra em
-%uma das quinas da piscina (1).  O robô segue em linha reta em direção à
-%próxima parede, com os motores das escovas ativados para fazer a limpeza do chão.
-%Uma vez próximo à parede, robô então desloca-se para a direita cerca de 20
-%centímetros e segue o percurso em linha reta, em sentido contrário (2). O deslocamento
-%de 20 centímetros é tal que haja uma sobreposição das áreas varridas pelas escovas
-%em ambos os sentidos percorridos (3), de forma a compensar qualquer desvio de
-%rota não detectado pelo giroscópio. O robô retorna à parede inicial, desloca-se
-%outros 20 centímetros para a direita  e segue mais uma vez em sentido oposto. Este
-%procedimento se repete até que o robô chegue à parede direita da piscina (4). Na
-%eventualidade do robô se encontrar, no meio do percurso,  com um obstáculo grande
-%o bastante para ser detectado pelos sensores de distância, o robô deverá desviar
-%do obstáculo e seguir sua rota original (5).
-%
-%\section{Modos de Operação}
-%A movimentação do robô limpador é definida por quatro modos de operação distintos,
-%referentes às quatro etapas de funcionamento: inicial, operação regular,
-%resposta a obstáculo e final.
-%\par
-%Na etapa inicial, o robô deve ser capaz de submergir ao fundo da piscina e
-%posicionar-se em um dos quatro vértices. Uma vez posicionado ele inicia o modo
-%de operação regular e realiza o percurso de limpeza  explicado anteriormente.
-%Terminado o percurso, o robô deve ser capaz de “emergir” à superfície para ser
-%coletado pelo usuário. Caso o robô se depare com um obstáculo de grande porte
-%em seu percurso, ele deve ser capaz de circundar o obstáculo e retornar ao modo de
-%operação regular.
-%
-%\subsection{Modo de Operação Regular}
-%O fluxograma a seguir define com mais detalhes as lógicas de funcionamento
-%do robô limpador para o modo de operação regular, levando em conta todos os
-%componentes eletrônicos envolvidos.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/flow-regular-robot.jpg}
-%  \caption{Modo de Operação Regular do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
-%  \label{fig:flow-regular-robot}
-%\end{figure}
-%\FloatBarrier
-%
-%\subsection{Resposta a Obstáculos}
-%Foram definidos três casos de obstáculo que o robô poderá encontrar em seu percurso.
-%
-%\begin{description}
-%\item[Caso 1:] \textit{Obstáculo pequeno capaz de ser sugado pela bomba e obstruir os
-%filtros do limpador}. Neste caso, o sensor de pressão interna detecta qualquer
-%variação de pressão na caixa do filtro.  A operação de limpeza é então abortada
-%e o robô para e se “eleva à superfície” (modo de operação final).
-%\item[Caso 2:] \textit{Obstáculo grande não detectado pelos sensores, resultando em
-%colisão direta com obstáculo}. Neste caso, o acelerômetro detecta parada brusca
-%do robô. A operação de limpeza é  também abortada e o robô para e se” eleva à
-%superfície” (modo de operação final).
-%\item[Caso 3:] \textit{Obstáculo grande e detectável pelos sensores de distância}. O
-%robô não é capaz de imediatamente discernir a parede da piscina com o obstáculo
-%e segue, a princípio, com seu procedimento como se o obstáculo fosse de fato parede.
-%\end{description}
-%\par
-%O fluxograma a seguir detalha em alto nível de abstração as etapas que o sistema
-%de controle devem seguir para circundar o obstáculo neste caso
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.7\textwidth]{figures/flow-robot-obstacle.jpg}
-%  \caption{Modo de Operação Resposta a Obstáculos do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
-%  \label{fig:flow-obstacle-robot}
-%\end{figure}
-%\FloatBarrier
-%
-%\subsection{Modo de Operação Inicial e Final}
-%Antes de começar a varredura da piscina, o robô deve primeiro posicionar-se
-%perfeitamente em um dos 4 cantos da piscina. O fluxograma a seguir detalha
-%as etapas do processo a partir do momento em que o robô chega ao fundo
-%da piscina.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/flow-initial-robot.jpg}
-%  \caption{Modo de Operação Inicial e Final do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
-%  \label{fig:flow-initial-robot}
-%\end{figure}
-%\FloatBarrier
-%
-%\section{O Corpo do Robô (Aeroespacial, Automotiva e Energia)}
-%A figura \ref{fig:initial_croqui} mostra a primeira modelagem do \textit{Clean Pool Robot}. O modelo
-%apresenta uma bomba de sucção (1), uma caixa com os filtros para as impurezas
-%(2), dois motores para a rotação das escovas (3), uma saída superior da água
-%filtrada (4), quatro rodas próprias para rolagem em ambientes aquáticos (5),
-%dois enrolamentos com escovas para soltura da sujeira do piso da piscina (6),
-%duas entradas para sucção da água e impurezas do fundo da piscina (7), uma
-%entrada da fonte de alimentação externa (8) e uma caixa com os circuitos
-%eletrônicos do robô (9). Abaixo da figura \ref{fig:initial_croqui} estão detalhados as especificações
-%de cada componente utilizado no Robô.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/croqui.png}
-%  \caption{ Croqui inicial do \textit{Clean Pool Robot} (\textsf{Autoria do Autor})}
-%  \label{fig:initial_croqui}
-%\end{figure}
-%\FloatBarrier
-%\par
-%Por motivo de resistência ao movimento o formato do robô foi modificado para
-%melhor aproveitamento das forças aerodinâmica envolvidas, as alterações no
-%desenho inicial foram feitas com a intenção de diminuir a força de arrasto, a
-%estrutura conta agora com cantos e arestas arredondadas conforme a Figura \ref{fig:better-croqui}.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/better-croqui.png}
-%  \caption{ Croqui melhorado do \textit{Clean Pool Robot}(\textsf{Autoria do Autor})}
-%  \label{fig:better-croqui}
-%\end{figure}
-%\FloatBarrier
-%\par
-%\begin{description}
-%\item[Bomba:] O processo de aspiração da piscina feito pelo robô será uma das
-%principais tarefas executadas pela bomba de sucção, bem como também o processo
-%de movimentação do robô embaixo d’água. Para isso, é importante que a bomba
-%seja forte o suficiente para sugar e gerar movimentação por meio
-%do fluxo de saída da bomba. A sucção será conectada diretamente ao reservatório
-%onde acontecerá a filtragem da água. É importante ressaltar que as únicas funções
-%da bomba neste projeto são apenas filtrar e movimentar por empuxo.
-%\par
-%A análise do dimensionamento adequado para a bomba será feito a partir de sua vazão
-%nominal. Para isto, tem-se por especificações primárias bombas que ofereçam vazões
-%altas e que trabalhem em uma profundidade máxima de 3 metros. 
-%\par
-%Após o cálculo de sua velocidade de saída utilizando a sua vazão e área de jato,
-%serão calculados o empuxo desenvolvido e sua respectiva pressão de saída. É importante
-%salientar que a pressão de saída deverá ser sempre positiva e superior a pressão
-%hidrostática a qual está submetido o bocal de propulsão.
-%\par
-%Ao longo de alguns estudos, observou-se que para o problema dado os modelos de bombas
-%que melhor se enquadram são as moto bombas, uma vez que as mesmas possuem baixo peso e
-%altas velocidades de saída, bem como altas vazões.
-%\par
-%O modelo parcialmente proposto será uma bomba do tipo Bilge , na qual tem as seguintes
-%características:
-%  \begin{itemize}
-%  \item Peso: aproximadamente 3 kg;
-%  \item Modelo: 500 GPH - com Tensão de trabalho 12 V DC - Amperagem de 1.9;
-%  \item Formato: Cilíndrico alterável;
-%  \item Área de operação entorno de até 3,7 metros.
-%  \end{itemize}
-%Observação: O formato da bomba poderá ser alterado de acordo com a eficiência
-%esperada.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.9\textwidth]{figures/waterbomb.png}
-%  \caption{Bomba proposta \cite{westmarine2016}}
-%  \label{fig:waterbomb}
-%\end{figure}
-%\FloatBarrier
-%\par
-%\textit{Dimensionamento do Teste:} Diante de todo processo de dimensionamento
-%e a propulsão do robô abaixo d’água, foi pensado em um teste para analisar se
-%há coerência nos cálculos realizados. Sendo assim, o teste irá ser realizado
-%com um uma estrutura móvel e uma bomba de aquário. É esperado, com isso, validar
-%os cálculos realizados no que tange a movimentação da estrutura. Para isso, é
-%necessário utilizar métodos que descrevem os cálculos que regem o movimento. Segundo
-%\citeonline{ise2000}, quando um veículo submersível se movimenta com velocidade constante,
-%a propulsão gerada pelos propulsores se iguala à força de arrasto produzida. A
-%força de arrasto será obtida a partir da soma da força de arrasto devido a 
-%movimentação do veículo mais a força de arrasto devido o cabo de alimentação.
-%\begin{displaymath}
-%  Fp = Fa = Fv + Fc = \frac{1}{2}\rho V^{2}_{v}Cd_{v} + \frac{1}{2}\rho V^{2}_{c}Cd_{c}
-%\end{displaymath}
-%Onde $Fp$ e $Fa$ referem-se à força de propulsiva e força de arrasto total
-%respectivamente; $Fv$ e $Fc$ são as forças de arrasto devido ao veiculo e ao cabo de
-%alimentação; $\rho$ é a densidade do fluido, $V_{v}$ e $V_{c}$ velocidades do
-%veículo e do cabo e por fim, $Cd_{v}$ e $Cd_{c}$ representam os coeficientes
-%de arrasto.
-%\par
-%A potência necessária para a bomba pode ser obtida em função da força propulsiva
-%e da velocidade do veiculo.
-%\begin{displaymath}
-%  P = Fp\frac{d}{t}
-%\end{displaymath}
-%Onde $d$ é a distancia percorrida, $t$ o tempo e $P$ a potência desejada.
-%\par
-%Os coeficientes de arrasto são medidos experimentalmente, para fluidos como
-%ar podem ser encontrados tabelados em função da velocidade do veiculo em relação
-%à velocidade do som nas condições do ambiente em questão (número de \textit{Mach}), uma
-%vez que este pode sofrer alterações devido a temperatura envolvida, meio de
-%propagação etc. Quando o veículo estudado se movimento em fluido líquido como a
-%água por exemplo, o coeficiente de arrasto deve ser medido em função do número
-%de Reynolds \cite{eng2008}, que por sua vez é calculado pela equação abaixo.
-%\begin{displaymath}
-%  Re = \frac{VD}{\upsilon}
-%\end{displaymath}
-%Onde $V$ equivale a velocidade do veículo, $D$ o diâmetro e $\upsilon$ a viscosidade
-%cinemática do fluido.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.9\textwidth]{figures/graphic-reynolds.png}
-%  \caption{Coeficiente de arrasto em função do número de Reynolds \cite{eng2008}}
-%  \label{fig:graphic-reynolds}
-%\end{figure}
-%\FloatBarrier
-%\par
-%Inicialmente a bomba utilizada será uma bomba de aquário, o que servirá de
-%parâmetro para a determinação da bomba correta. Para isso, serão realizados
-%testes com essa bomba para comprovação dos cálculos descritos acima.
-%
-%\item[Sistema Filtrador:] O sistema de filtragem irá garantir que a piscina
-%estará limpa após o uso do \textit{Clean Pool Robot}. O filtro será fundamental,
-%pois ele será responsável pela remoção das partículas de sujeira que ficam decantado
-%no fundo da piscina. Primeiro a água será sugada para dentro do aparelho que passará por
-%um depósito onde será feita a filtragem. Em seguida, a água filtrada retorna para
-%piscina. Será realizado um sistema de dupla filtragem com dois tipos de elementos
-%filtrantes, um de malha, secundário, para evitar que folhas e objetos de maior
-%tamanho entrem no filtro principal que será responsável por filtrar o particulado
-%e detritos da água.
-%\begin{itemize}
-%  \item Filtros: Usar-se-á uma malha de alumínio para a realização de uma
-%  pré-filtragem, a qual impedirá que folhas, plásticos, cabelos, e outros
-%  materiais maiores entupam o filtro principal responsável por retirar impurezas
-%  menores da água. Essa malha é o que chamaremos de filtro secundário. O filtro
-%  principal será um elemento filtrante na forma cilíndrica comumente utilizado
-%  na filtragem de caixas d’águas. As imagens dos filtros a serem utilizados e as
-%  especificações técnicas do elemento filtrante principal constam a seguir.
-%  \item Malha de Alumínio: A malha de alumínio é um material durável, altamente
-%  resistente a água, não precisa de manutenção e nem de troca. Em caso de avaria na
-%  grade a substituição é simples e barata. A grade será localizada na entrada
-%  da caixa filtradora, no duto de acesso na base do robô, conforme a Figura \ref{fig:eletric-motor}.
-%  \par
-%  \begin{figure}[h]
-%    \centering
-%    \includegraphics[width=0.9\textwidth]{figures/mesh-aluminium.png}
-%    \caption{Modelo de malha de alumínio utilizada como filtro secundário. \cite{dx2016}}
-%    \label{fig:mesh-aluminium}
-%  \end{figure}
-%  \FloatBarrier
-%  \par
-%  \item Elemento Filtrante:
-%  \begin{itemize}
-%    \item Temperatura de operação:  5ºC mín. a 50ºC máx;
-%    \item Vazão: 4.200 litros/hora;
-%    \item Grau de filtração: 50 micra (um grão de areia tem entre 200 a 500 micra);
-%    \item Peso bruto:448 g;
-%    \item Peso líquido: 337g.
-%    \item Dimensões: Altura - 254mm; Diâmetro externo - 116mm; Diâmetro interno - 26mm.
-%  \end{itemize}
-%  Para se garantir a qualidade da água filtrada é indicado pelo fabricante a
-%  substituição dos elementos filtrantes \textit{Poly Flow} a cada 6 meses ou quando
-%  for observada a redução do fluxo da água. O elemento filtrante é descartável,
-%  não necessita retrolavagem. A manutenção periódica do elemento é aconselhável.
-%  Para isso, utilize apenas água e uma escova macia.
-%  \par
-%  \begin{figure}[h]
-%    \centering
-%    \includegraphics[width=0.2\textwidth]{figures/filter.png}
-%    \caption{Elemento Filtrante - Refil POE IBBL 10'' \textit{Big Blue}}
-%    \label{fig:filter}
-%  \end{figure}
-%  \FloatBarrier
-%  \par
-%  O elemento filtrante na forma cilíndrica, além de ser o mais encontrado
-%  comercialmente, proporcionará ao CPR uma compactação dos dutos de filtragem
-%  e uma melhor organização interna para alocação de seus componentes. O modelo
-%  de filtro selecionado da \textit{Poly Flow} e similares é o que mais se encaixa as
-%  necessidades de projeto e ao volume de trabalho da bomba a ser utilizada. Esses
-%  modelos são comumente utilizados na filtragem de caixas d’águas, piscinas e banheiras.
-%\end{itemize}
-%\par
-%O elemento filtrante na forma cilíndrica, além de ser o mais encontrado
-%comercialmente, proporcionará ao CPR uma compactação dos dutos de filtragem e
-%uma melhor organização interna para alocação de seus componentes. O modelo de
-%filtro selecionado da Poly Flow e similares é o que mais se encaixa as
-%necessidades de projeto e ao volume de trabalho da bomba a ser utilizada.
-%Esses modelos são comumente utilizados na filtragem de caixas d’águas, piscinas
-%e banheiras.
-%
-%\item[Motor:] Serão utilizados dois motores elétricos para rotacionar as escovas.
-%a transmissão do torque para as escovas será por engrenagens, como ilustrado na
-%Figura \ref{fig:eletric-motor}.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.7\textwidth]{figures/eletric-motor.png}
-%  \caption{Atuação do motor elétrico (\textsf{Autoria do Autor})}
-%  \label{fig:eletric-motor}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Saída Supeior de Água:] A água que é ejetada do sistema de filtragem é
-%devolvida para a piscina já filtrada, auxiliando assim a limpeza geral de todo
-%o volume em que o robô esta submerso. A água filtrada é direcionada para uma
-%saída que se localiza na parte superior do produto. O duto de saída possui quatro
-%aberturas imediatamente opostas que servem para direcionar o jato d’água,
-%funcionando como o sistema de propulsão do produto. Quando uma das quatro aberturas
-%estiverem sendo utilizadas para direcionar o jato, as outras três permanecem
-%fechadas sendo utilizadas somente quando for necessário para a movimentação para a
-%direção desejada. O duto de saída será um bocal direcionável localizado na
-%parte superior do robô responsável por sua locomoção. Esse bocal irá se mover
-%nas 4 direções principais, isto é, nos ângulos de 0, 90, 180 e 270 graus,
-%proporcionando ao robô a locomoção necessária para o cumprimento da rota de limpeza.
-%
-%\item[Rodas:] O aparelho contará com dois tipos de rodas, a primeira em formato
-%de esfera que será apenas para apoio. Foram utilizadas quatro rodas desse modelo.
-%A segunda roda será para direcionar o aparelho no seu movimento, e será localizada
-%no centro do robô, conforme imagem abaixo. A roda central será responsável pela
-%alteração de direção do robo, sendo que apenas efetuará giros de  90º.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.6\textwidth]{figures/wheels.png}
-%  \caption{Localização das rodas e rotação das rodas centrais (\textsf{Autoria do Autor})}
-%  \label{fig:wheels}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Escovas:] Imaginou-se utilizar escovas de formato cilíndrico, afim de que
-%à medida que as rodas do robô se movem, as escovas também possam acompanhar o
-%movimento sem maiores problemas. As cerdas da escova devem possuir elevada
-%resistência à tração, resistência à fadiga, baixo coeficiente de atrito e boa
-%resistência térmica. Dessa forma como material para as cerdas sugere-se o
-%\textit{Nylon} \cite{santos2010}.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.4\textwidth]{figures/brush.png}
-%  \caption{Modelo de escova sugerido para a limpeza da piscina \cite{santaclara2016}}
-%  \label{fig:brush}
-%\end{figure}
-%\FloatBarrier
-%A localização das escovas está ilustrada na figura \ref{fig:brush-local}, feita no software
-%\textsf{CAD Catia V5 R19}. Serão utilizadas duas escovas movidas por motores elétricos,
-%que farão a limpeza do chão.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/brush-local.png}
-%  \caption{Localização das escovas no robô (\textsf{Autoria do Autor})}
-%  \label{fig:brush-local}
-%\end{figure}
-%\FloatBarrier
-%\par
-%A movimentação das escovas será realizada por meio de engrenagens, como ilustrados
-%na Figura \ref{fig:brush-system}. O motor elétrico fornecerá um torque e o sistema de
-%engrenagem transmitirá para o eixo, fazendo com que as escovas rotacionem.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/brush-system.png}
-%  \caption{Sistema para movimentação das escovas.}
-%  \label{fig:brush-system}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Entrada Inferior d'água:] A entrada ficará localizada logo após as
-%escovas, como pode ser observado na figura \ref{fig:brush-local}.
-%
-%\item[Fonte de Alimentação Externa:] O \textit{Clean Pool Robot} é alimentado por
-%uma fonte de energia que fica fora da água, através de um cabo de força. O Robô
-%será alimentado pela tomada perto da piscina, em tensão de 220V (padrão Brasília).
-%O cabo de alimentação terá um extensão que garante o deslocamento do robô por todas
-%as extremidades da piscina durante a sua limpeza. Para o dimensionamento do
-%comprimento do cabo foi calculado uma distância da tomada até a borda da piscina,
-%somado ao maior comprimento possível para deslocamento do robô. Assim o comprimento
-%do fio é dado por:
-%\begin{displaymath}
-%  L= d + D
-%\end{displaymath}
-%Onde o $L$ é o comprimento total do cabo de energia do robô, $d$ é a distância da
-%tomada até a borda da piscina e $D$ é a distância a borda até o fundo da
-%extremidade oposta a ela. Assim o cabo terá $L = 16,6 \approx 17m$. Considerando que
-%a entrada do cabo na piscina se fará no ponto $P_ {ent}$, na metade da piscina,
-%conforme a Figura \ref{fig:cable-desloc}.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/cable-desloc.png}
-%  \caption{Deslocamento do cabo dentro da piscina \cite{assumpcao2014}}
-%  \label{fig:cable-desloc}
-%\end{figure}
-%\FloatBarrier
-%\par
-%O cabo de energia possuirá uma boia presa ao logo da sua extensão para evitar
-%enrolamento do cabo e possível ruptura do mesmo. O fio possuirá um revestimento
-%de PVC impermeável e uma bitola estimada de 3,5 mm, para um potência consumida
-%total de 350W.
-%
-%\item[Vedação:] É o processo que impede a passagem de líquidos, gases e
-%sólidos particulados de um meio para outro. O material do vedador deve ser
-%compatível com o produto para que não ocorra reações químicas causando vazamento
-%e contaminação do produto.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.4\textwidth]{figures/haha.png}
-%  \caption{Massa Epoxi para vedação.}
-%  \label{fig:haha}
-%\end{figure}
-%\FloatBarrier
-%\par
-%A massa Epoxi Tubolit Mep 301 funciona como proteção anti-corrosiva, proteção
-%contra impactos, solda a frio, isolante elétrico, reparos em geral de furos,
-%emendas e enchimentos, tanto dentro quanto fora d’água. Para aplicação
-%subaquática: Manutenção Nava, Off-shore, Industrial, Construção Civil. Para
-%revestimento e reparo em aço, concreto e outros materiais. Estruturas parcial
-%ou totalmente submersas, oleodutos, hidroelétricas, plataforma de petróleo,
-%estacas de concreto, tanques, reservatórios e caixas d'água.
-%\end{description}
-%
-%\section{A Mente Do Robô (Eletrônica e Software)} \label{sec:mind-robot}
-%A figura \ref{fig:schema-interactive-electro-soft} mostra a primeira esquematização
-%da interação entre os componentes eletrônicos e os de \textit{software}. O modelo
-%apresenta uma \textit{raspberry pi} (10), sensores de distância (11), pressão (12) e
-%um acelerômetro/giroscópio (13), um conjunto de pinos (GPIO) (14), servo motor (15),
-%relês (16), \textit{driver} da GPIO (17) e os serviços disponibilizados pelo \software  (18).
-%Abaixo da figura \ref{fig:schema-interactive-electro-soft} estão detalhados as especificações
-%de cada um desses componentes.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=\textwidth]{figures/schema-interactive-eletro-soft.png}
-%  \caption{Esquemático da Interação entre Eletrônica e Software (\textsf{Autoria do Autor})}
-%  \label{fig:schema-interactive-electro-soft}
-%\end{figure}
-%\FloatBarrier
-%\par
-%Os periféricos fornecerão dados que, por sua vez, serão passados ao \textit{driver} por
-%meio de dispositivo de \hardware (GPIO).  O \textit{driver} será responsável por permitir
-%a comunicação entre o \hardware e o \software que, na figura, é representado pelos
-%serviços que deve fornecer ao sistema. Cada serviço tratará os dados de entrada
-%conforme a especificidade solicitada e, em seguida, retorna uma saída para um
-%atuador, por meio do \textit{driver}.
-%\par
-%\begin{description}
-%\item[\rasp 2 B:] Com o objetivo de desenvolver um robô é necessário ter uma
-%central de processamento de dados, a \rasp  foi escolhida pelo seu número de
-%portas GPIO aonde pode ser desenvolvida a solução de sensores que existe
-%para o problema. Além disso, seu suporte a sistema operacional, o que permite
-%o uso de uma extensão maior de bibliotecas como a biblioteca \textit{pthread},
-%e a possibilidade do uso de várias linguagens de programação também foram motivos
-%para a escolha. \rasp é baseado em um \textit{SoC} - \textit{System on a Chip} -
-%da \textit{Broadcom}, conhecido como \textsf{bcm2835}. Possui um processador
-%de 700 MHz e memória RAM de 512 MB \cite{raspfoundation2014}.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{figures/rpi2b.jpg}
-%  \caption{\textit{Raspberry pi 2 B} \cite{raspfoundation2016}}
-%  \label{fig:raspberry2b}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[GPIO:] \textit{Generic Ports Input Output} são saídas e entradas de tensão.
-%Elas servem para fazer a comunicação do processador com componentes externos,
-%sensores e atuadores e outros tipos de componentes eletrônicos. Algumas dessas
-%portas tem usos predefinidos pelo fabricante do \hardware como saídas de
-%alimentação genérica, e terras, outros dos pinos são de uso genérico. A
-%\textit{Raspberry pi} tem 40 pinos, aonde dessas 17 são para uso genérico.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.6\textwidth]{figures/gpio.png}
-%  \caption{GPIO \textit{Raspberry pi 2 B} \cite{raspfoundationgpio2016}}
-%  \label{fig:raspberry2b}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Sensores de Distância:] serão utilizados sensores de distância com o
-%intuito de permitir ao robô a identificação do espaço entre o robô e qualquer
-%objeto à sua frente. Isso é importante para evitar colisões com as paredes da
-%piscina e obstáculos a alturas que o sensor possa detectar. O sensor específico
-%ainda não foi definido pois é necessário fazer teste com os propostos.
-%
-%\item[Sensores de Pressão:] O sensor de pressão proposta funciona com o
-%princípios de materiais piezoelétricos, um liquido entra dentro da câmara
-%e proporciona uma pressão nas paredes da câmara, esse pressão gera uma
-%diferença de potencial no material. Com essa diferença de potencial é
-%possível, usando um conversor AD (Analógico/Digital), saber a pressão dentro
-%da câmara, e fora do robô.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.6\textwidth]{figures/pressure-sensor.png}
-%  \caption{Sensor de pressão MPX4250GP \cite{octopart2016}}
-%  \label{fig:pressure-sensor}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Acelerômetro/Giroscópio:] Está sendo cogitado usar um acelerômetro
-%para auxiliar o deslocamento em linha reta do robô e detectar choques com
-%obstáculos grandes, quando ocorre um choque com um obstaculo grande não
-%detectado pelo sensor de distancia a uma variação brusca na aceleração, com
-%isso podemos tratar o obstaculo ou abortar o funcionamento do robô.
-%\par
-%No mesmo módulo se encontra um giroscópio, ele mede rotações no robô, caso
-%seja identificado alguma rotação não pretendida pelo sistema podemos usar esse
-%dado para corrigir a trajetória do mesmo. O componente eletrônico que tem os
-%dois sensores se comunica através do protocolo I2C. Isso reduz o numero de
-%pinos necessários pare ler os dados do sensor.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.5\textwidth]{figures/accelerometer.png}
-%  \caption{Acelerômetro/Giroscópio MPU-6050 \cite{arduino2016}}
-%  \label{fig:accelerometer}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Servo Motor:] Servos motores são utilizados para rotacionar um eixo até
-%uma posição desejada. Esses motores são normalmente motores de alto torque.
-%Dois servos (Micro Servo 9g e SG90 TowerPro) serão utilizados para rotacionar
-%as rodas (5), o principal motivo de escolher esse modelo é ele ter torque
-%suficiente para mover as mesmas e ter baixo custo, E para mover a saída de água
-%(4) da bomba foi escolhido um servo motor (SM-S4306R) com maior liberdade de
-%rotação (360º) e um maior torque.
-%\begin{figure}[h]
-%  \centering
-%	\includegraphics[height=5cm]{figures/servant-motor.png}
-%	\quad
-%	\includegraphics[height=5cm]{figures/micro-motor.png}
-%  \caption{Servo Motores \cite{flipflop2013} e \cite{flipflop2016}, respectivamente}
-%\end{figure}
-%\FloatBarrier
-%
-%\item[Relé do Motor:] Os relés servem para fazer acionamento de circuitos
-%de alta tensão usando como chaves circuitos de baixa tensão, além disso os
-% relés servem para isolar os circuitos de baixa tensão dos de alta tensão.
-% 
-%\item[\textit{Driver} GPIO:] O driver é um \software que habilita a comunicação
-%entre o \hardware e o \textit{software}. A partir do \textit{driver} é possível consumir os
-%dados advindos dos componentes de \textit{hardware}, fazer o devido tratamento e, se
-%necessário, enviar uma resposta \cite{windows2016}. Para o projeto foi
-%identificada a biblioteca \textsf{bcm2835.h}, desenvolvida por Mike McCauley,
-%que fará interface entre o \hardware e o \middleware, de forma que essa API
-%terá o papel do \textit{driver}. Segundo \citeonline{mccauley2015}, a
-%\textsf{bcm2835.h} fornece acesso à GPIO e demais funções da \textit{Broadcom}
-%bcm2835, além de permitir acesso de leitura de sinais digitais, bem como de
-%envio de sinais digitais, por meio da SPI ou I2C.
-%\par
-%A \textsf{bcm2835.h} é compatível com C++, bastando para o seu uso a adição do
-%\textit{header} no código-fonte \cite{mccauley2015}. A documentação da
-%\textsf{bcm2835.h} é extensa, o que provê suporte considerável para a equipe.
-%Essa biblioteca é dividida em oito módulos:
-%\begin{itemize}
-%  \item Constantes para passagem: fornece \textsf{MACROs} para serem utilizadas
-%  pela própria biblioteca ou programas externos que a estejam utilizando. Por
-%  meio desse módulo pode-se, por exemplo, fazer a referência para um pino apenas
-%  utilizando uma \textsf{MACRO}, sem preocupar-se como isso é referenciado
-%  internamente \cite{mccauley2015}.
-%  
-%  \item Biblioteca de inicialização e gerenciamento: permite a inicialização da
-%  \textit{broadcom} bcm2835 e seu gerenciamento \cite{mccauley2015}.
-%  
-%  \item Acesso de registro de baixo nível: normalmente o seu uso é desnecessário.
-%  Fornece funções para o registro de baixo nível de informações \cite{mccauley2015}.
-%  
-%  \item  Acesso ao registro na GPIO: fornece funções que providenciam meios de ter
-%  acesso à interface da GPIO. Por meio dessas funções pode-se fazer a leitura do
-%  estado de cada pino, bem como ajustar o estado de saída para cada pino
-%  \cite{mccauley2015}.
-%  
-%  \item Acesso à SPI: permite o uso da SPI0 (\textit{Serial Peripheral Interface})
-%  para a comunicação com dispositivos externos SPI \cite{mccauley2015}.
-%  
-%  \item Acesso à I2C: fornece funções para uso da I2C (A \textit{Broadcom}
-%  barramento de controle de série com o barramento/interface Philips I2C
-%  versão 2.1 Janeiro de 2000) para comunicação com dispositivos externos
-%  I2C \cite{mccauley2015}.
-%  
-%  \item Acesso ao Sistema de Tempo: permite acesso funções relativas ao
-%  sistema contador de tempo \cite{mccauley2015}.
-%  
-%  \item Modularização de Largura de Pulso: permite o controle e a configuração
-%  de dois canais indepentendes de PWM. Cada um dos canais pode ser conectado a
-%  um subconjunto limitado de pinos da GPIO.
-%\end{itemize}
-%
-%\item[\textit{Middleware} (Serviço):] é um \software que conecta outros componentes
-%de \textit{software}. Uma camada de infraestrutura que viabiliza o desenvolvimento de
-%aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados
-%pela aplicação de negócio \cite{oracle2016}. O \middleware fornecerá serviços base para
-%o robô, como ativação dos motores, escova e uso dos sensores. Inicialmente, imaginou-se
-%a disponibilização de serviços para ativação de motores, bomba, escovas e leitura do
-%\textit{output} dos sensores.
-%\end{description}
-%
-%\subsection{Arquitetura de \textit{Software} e Programação}
-%A Figura \ref{fig:schema-arch} mostra a abstração da arquitetura do sistema associado ao projeto.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.4\textwidth]{figures/schema-arch.jpg}
-%  \caption{Arquitetura em Camadas do \textit{Software} (\textsf{Autoria do Autor})}
-%  \label{fig:schema-arch}
-%\end{figure}
-%\FloatBarrier
-%\par
-%O sistema segue uma arquitetura em camadas. A partir do \hardware os dados serão
-%capturados. O \textit{driver} fará a ponte de comunicação entre o \hardware
-%e o \textit{middleware}, permitindo que os dados possam ser trabalhados pela aplicação de
-%negócio. A aplicação de negócio utilizará os serviços disponíveis pelo \textit{middleware},
-%afim de tratar os dados recebidos e fornecer instruções ao robô. Uma visão
-%ampliada da arquitetura está disponível na Figura \ref{fig:schema-layer-arch}.
-%\par
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=0.9\textwidth]{figures/schema-layer-arch.jpg}
-%  \caption{Detalhamento das Camadas e Interação dos componentes (\textsf{Autoria do Autor})}
-%  \label{fig:schema-layer-arch}
-%\end{figure}
-%\FloatBarrier
-%\par
-%Foi selecionada a linguagem de programação \textsf{C++} para o desenvolvimento
-%do projeto, por diversos aspectos associados a ela:
-%\begin{itemize}
-%  \item Linguagem multiparadigma: permite o uso de ferramentas relativas
-%  ou paradigma estruturado, orientado a objetos e programação genérica. Essa
-%  característica, segundo \citeonline{stroustrup2012}, criador da linguagem, apresenta
-%  ao programador a possibilidade de utilizar as melhores características de
-%  cada forma de programação.
-%  
-%  \item Linguagem de baixo nível: linguagem voltada a aplicações que exigem
-%  a compreensão da arquitetura do computador.
-%  
-%  \item Biblioteca Padrão de \textit{Templates}: fornece diversas classes e
-%  funções que facilitam a produção de \textit{software}, evitando retrabalho.
-%\end{itemize}
-%\par
-%O desenvolvimento do \software será cooperativo e distribuído. Conforme descrito na
-%seção \ref{sec:mind-robot}, a \rasp permite o uso de um sistema operacional. Para
-%padronizar o desenvolvimento com o mesmo sistema operacional instalado na
-%\textit{Raspberry pi}, usar-se-á a ferramenta de virtualização \textsf{Vagrant}.
-%O \textsf{Vagrant} é uma ferramenta para a construção de ambientes de desenvolvimento
-%focada num fluxo de trabalho simples e automação da configuração desse ambiente
-%\cite{hashicorp2016}.
-%\par
-%O uso do \textsf{Vagrant} permitirá também que o ambiente de desenvolvimento de
-%cada membro da equipe seja igual, com as mesmas bibliotecas instaladas e ferramentas.
-%Essa padronização evitará dificuldades de compatibilidade entre o ambiente dos
-%desenvolvedores e o instalado na \textit{Raspberry pi}.
-%\par
-%O Código \ref{vagrantfile} mostra as configurações da \textit{box} criada para o
-%projeto:
-%\par
-%\begin{lstlisting}[language=Ruby, label=vagrantfile, caption=\textsf{Vagrantfile} inicial]
-%Vagrant.configure(2) do |config|
-%  config.vm.box = "debian/jessie64"
-%
-%  config.vm.provision "shell", path: "scripts/gpp.sh"
-%  config.vm.provision "shell", path: "scripts/libraries.sh"
-%end
-%\end{lstlisting}
-%\par
-%Observa-se pelo Código \ref{vagrantfile} que as configurações foram divididas em
-%dois \textit{scripts}, descritos nos Códigos \ref{gpp.sh} e \ref{libraries.sh}.
-%\par
-%\begin{lstlisting}[language=bash, label=gpp.sh, caption=\textsf{Script} para instalação
-%de ferramentas de compilação]
-%#!/usr/bin/env bash
-%
-%echo "Installing: ( 1 ) g++, ( 2 ) gcc and ( 3 ) make"
-%
-%echo "Install g++: starting"
-%sudo apt-get install g++ -y
-%echo "Install g++: DONE"
-%
-%echo "Install gcc: starting"
-%sudo apt-get install gcc -y
-%echo "Install gcc: DONE"
-%
-%echo "Install Make: starting"
-%sudo apt-get install build-essential
-%echo "Install Make: DONE"
-%\end{lstlisting}
-%\par
-%\begin{lstlisting}[language=bash, label=libraries.sh, caption=\textsf{Script} para instalação
-%de bibliotecas externas]
-%#!/usr/bin/env bash
-%
-%echo "Installing: ( 1 ) bcm2835 and ( 2 ) boost-libraries"
-%
-%echo "Install bcm2835.h: starting"
-%sudo wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
-%tar zxvf bcm2835-1.50.tar.gz
-%rm bcm2835-1.50.tar.gz
-%cd bcm2835-1.50
-%./configure
-%make
-%sudo make check
-%sudo make install
-%echo "Install bcm2835.h: DONE"
-%
-%echo "Updating: starting"
-%sudo apt-get update
-%echo "Updating: DONE"
-%
-%echo "Install boost-libraries: starting"
-%sudo apt-get install libboost-all-dev -y
-%echo "Install boost-libraries: DONE"
-%\end{lstlisting}
-%\par
-%Será utilizado também uma ferramenta para o controle de versão do código. O
-%\textsf{Git} foi selecionado para cumprir essa função, enquanto que o
-%\textsf{GitHub} foi escolhido como repositório remoto. O controle de versão permite
-%o gerenciamento das diversas versões de um determinado documento. É comum o
-%seu uso no desenvolvimento de \textit{software}, o que fornece um controle do histórico
-%de alterações, permitindo o resgate de versões antigas. Outra vantagem no uso desse
-%tipo de sistema é a facilidade em trabalhar em equipe sobre os mesmos documentos,
-%pois fornece ferramentas que minimizam problemas de conflito de alterações. A
-%divisão do projeto em ramos de trabalho, permitindo o desenvolvimento paralelo
-%de diferentes partes do \software pela equipe, também é uma vantagem no
-%versionamento do código.
+O projeto para construção de um robô capaz de efetuar a limpeza do fundo de piscinas mostrou-se viável e está em desenvolvimento. A estrutura do robô projetada até o momento foi necessária para realização dos testes de movimentação e vedação. Além disso, o desenvolvimento da lógica do robô ao executar o percurso para varrer a piscina, a arquitetura de software e comunicação entre a raspberry pi 2 e o arduino estão implementadas. Os proximos passos serão a conexão do sistema de locomoção, já testado, ao sistema de limpeza e ao sistema de automação. Pretende-se finalizar a estrutura e lógica do robô, bem como realizar testes do seu funcionamento para a próxima entrega.
