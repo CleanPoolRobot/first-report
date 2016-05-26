@@ -50,3 +50,20 @@ Com base nas informações apresentadas e na possível potência geral do sistem
 \end{figure}
 \FloatBarrier
 \par
+
+\subsection{Simulações}
+Uma simulação de fluido dinâmica foi executada visando obter alguns parâmetros relacionados ao movimento do robô. Trata-se de uma simulação preliminar, onde o robô possui geometria 2D, apresenta apenas a altura das rodinhas e não apresenta o tubo superior de exaustão de água.
+\par
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/simulation.png}
+  \caption{1) campo de pressão estática; 2) campo de velocidade; 3) malha utilizada; 4) Resíduos. (\textsf{Autoria do Autor})}
+  \label{fig:simulation}
+\end{figure}
+\FloatBarrier
+\par
+A simulação foi feita considerando-se regime transitório e laminar. Como condição inicial foi imposta uma velocidade de 0,15 m/s na direção do eixo $x$, velocidade pretendida para o robô.
+
+No campo de pressão é possível observar que existe um aumento da pressão na parte frontal do robô devido ao movimento o que gera um arrasto. Esse valor foi cerca de 88 Pa e este é aceitável, uma vez que a velocidade do robô é extremamente baixa. No campo de velocidade, observa-se dois aumentos de velocidades, o primeiro devido à curvatura da parte de cima do robô onde o fluido (água) ganha uma velocidade tangencial ao mesmo e na parte de baixo do robô devido ao estrangulamento da área, passando de 0,15 m/s para 0,38 m/s. Esse aumento de velocidade é importante para garantir que mais água entre dentro do robô para alimentar o sistema de filtração/bomba. Ambas velocidades estão diretamente ligadas à pressão (inversamente proporcionais).
+
+Futuramente será feita outra simulação, porém com um menor número de simplificações, como por exemplo, corpo com rodinhas, tubo de exaustão de água e geometria 3D, para validar os valores aqui encontrados. Será feita também uma simulação estrutural para certificação de que a estrutura superior que estará sujeita a pressão da coluna d’água resista ao trabalho do robô.

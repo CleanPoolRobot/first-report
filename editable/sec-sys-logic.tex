@@ -3,7 +3,7 @@
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/schema-eletro-soft.png}
-  \caption{Interação dos componentes eletrônicos e o core software.}
+  \caption{Interação dos componentes eletrônicos e o core software. (\textsf{Autoria do Autor)}}
   \label{fig:schema-eletro-soft}
 \end{figure}
 \FloatBarrier
@@ -20,7 +20,7 @@ Com o objetivo de desenvolver um robô é necessário ter uma central de process
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/rpi2b.jpg}
-  \caption{Raspberry PI 2 B.}
+  \caption{Raspberry PI 2 B. \cite{raspfoundationgpio2016}}
   \label{fig:schema-eletro-soft}
 \end{figure}
 \FloatBarrier
@@ -64,7 +64,7 @@ Para acionar os sistemas de alta tensão (Motores e Bomba) com circuitos de baix
 \par
 
 \subsubsection{\textit{Driver} GPIO}
-O \textit{driver} GPIO é um \software que habilita a comunicação entre o \hardware e o \textit{software}. A partir do \textit{driver} é possível receber  os dados advindos dos componentes de \hardware, fazer o devido tratamento e, se necessário, enviar uma resposta ao \hardware (WINDOWS). Para o projeto foram identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza o \textit{Raspberry pi}. Essas bibliotecas fazem a interface entre o \hardware e o \textit{middleware}, de forma que essas \textsf{APIs} fazem o papel do \textit{driver}.
+O \textit{driver} GPIO é um \software que habilita a comunicação entre o \hardware e o \textit{software}. A partir do \textit{driver} é possível receber  os dados advindos dos componentes de \hardware, fazer o devido tratamento e, se necessário, enviar uma resposta ao \hardware \cite{windows2016}. Para o projeto foram identificadas algumas bibliotecas, disponibilizadas pela comunidade que utiliza o \textit{Raspberry pi}. Essas bibliotecas fazem a interface entre o \hardware e o \textit{middleware}, de forma que essas \textsf{APIs} fazem o papel do \textit{driver}.
 
 \subsection{O Sistema de Sensoriamento}
 \subsubsection{Os Requisitos/Dimensionamento}
@@ -78,7 +78,7 @@ Para garantir que o robô seja capaz de seguir o percurso definido é necessári
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/pressure-sensor.png}
-  \caption{Sensor de Pressão}
+  \caption{Sensor de Pressão \cite{octopart2016}}
   \label{fig:a}
 \end{figure}
 \FloatBarrier
@@ -88,7 +88,7 @@ Para garantir que o robô seja capaz de seguir o percurso definido é necessári
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.3\textwidth]{figures/accelerometer.png}
-  \caption{Acelerômetro}
+  \caption{Acelerômetro \cite{arduino2016}}
   \label{fig:gpi}
 \end{figure}
 \FloatBarrier
@@ -119,7 +119,7 @@ A Figura \ref{fig:circuit} mostra o diagrama do circuito proposto:
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/circuit.png}
-  \caption{Circuito proposto.}
+  \caption{Circuito proposto. (\textsf{Autoria do Autor)}}
   \label{fig:circuit}
 \end{figure}
 \FloatBarrier
@@ -141,7 +141,7 @@ A Figura \ref{fig:pinout} mostra a pinagem de cada componente eletrônico do cir
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/pinout.png}
-  \caption{Pinagem usada.}
+  \caption{Pinagem usada. (\textsf{Autoria do Autor)}}
   \label{fig:pinout}
 \end{figure}
 \FloatBarrier
@@ -157,14 +157,14 @@ A Figura \ref{fig:schema-arch} mostra a abstração da arquitetura do sistema as
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/schema-arch.jpg}
-  \caption{Visão geral da arquitetura de software.}
+  \caption{Visão geral da arquitetura de software. (\textsf{Autoria do Autor)}}
   \label{fig:schema-arch}
 \end{figure}
 \FloatBarrier
 \par
 
 \subsubsection{\textit{Middleware}}
-\textit{Middleware} é um \software que conecta outros componentes de \textit{software}. Uma camada de infraestrutura que viabiliza o desenvolvimento de aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados pela aplicação de negócio (ORACLE). O \middleware fornecerá serviços base para o robô, como ativação dos motores, escova e uso dos sensores.
+\textit{Middleware} é um \software que conecta outros componentes de \textit{software}. Uma camada de infraestrutura que viabiliza o desenvolvimento de aplicações voltadas ao negócio. Provê serviços que serão amplamente utilizados pela aplicação de negócio \cite{oracle2016}. O \middleware fornecerá serviços base para o robô, como ativação dos motores, escova e uso dos sensores.
 
 \subsubsection{Camada de Serviços}
 \subsubsubsection{Os Requisitos}
@@ -182,7 +182,7 @@ A partir desse levantamento e considerando como comumente é definida arquitetur
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{figures/layers-soft.png}
-  \caption{Visão detalhada das camadas de software.}
+  \caption{Visão detalhada das camadas de software. (\textsf{Autoria do Autor})}
   \label{fig:layer-soft}
 \end{figure}
 \FloatBarrier
@@ -293,7 +293,7 @@ Para essa tarefa o código faz uso dos serviços citados anteriormente e de um c
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{figures/move-dfd.png}
-  \caption{Diagrama de Fluxo de Dados para a Locomoção.}
+  \caption{Diagrama de Fluxo de Dados para a Locomoção. (\textsf{Autoria do Autor})}
   \label{fig:move-dfd}
 \end{figure}
 \FloatBarrier
